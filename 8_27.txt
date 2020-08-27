@@ -1,0 +1,130 @@
+CECS 343 8/27/2020
+
+Chapter 1 -- What is Software Engineering?
+
+1)Why is development time so long?
+	-bugs
+	-building the wrong thing (you didn't get the info right when figuring out what you should build)
+		>Create a Spec document when you determine what it is you should build
+	-process info = 1M to 1T Bits & ise it to control execution paths
+	-Factor of 1,000 to 1B more complex than other kinds of engineering
+		How to Fix? (best to use "agile development")
+		- ***Simplify Execution Paths (Avoid Surprise)
+			>example of exec path: "if-then-else"
+			>controlled by the values in more than one variable
+		- Reduce Complexity of Data flowing between "Boxes" (aka reduce # of interconnections)
+			>at any given level when looking at your progam, you want that part to look simple
+			>Box: a group of code that has a defined inteface connected to it
+		- Reduce # of Data Paths
+2)Why are development costs high?
+	-hard to predict/estimate effort due to complexity (& unforeseen bugs)
+	-labor intensive
+	-* most effort is in find/fix RUNTIME bugs
+	-*** Big percentage of projects fail
+3)Why are there bugs in completed programs?
+	-# of pathway combinations too big to test, ever. 
+4)Why do we maintain existing (aka "Legacy") programs for so long? (aka "cash cows")
+	-we don't want to spend the money to re-write since eventually they will lose their use
+	-It works, so why bother
+5)Why is it hard to measure development progress?
+	-WBS helps a lot
+		>Your list of tasks and subtasks
+		>"Work Breakdown Structure"
+	-"90-90" rule
+		>80% overun
+		>After 90% of the time(say you've built 90% of the software), you've actually done only 50%, 
+		 you have another 90% left (this is where you find most of the RT bugs
+	-*** Most metrics[measurements] are poor & have (hidden) giant "error bar"
+6)When is the development of a new type of program (New-Dev) easy and low risk?
+	-use specialty-area "framework" (or "library") where your "PGM" is reduced to simple "biz logic"
+		1. you write 10-15% of the total code
+		2. framework is "preview"
+		3. need your PBM to be VERY CLOSE to speciality-area
+Ch 1.1.2 Application "Domains" (PBM areas)
+
+8 Areas
+
+1) System Programing
+	-ex: OS, Network, RTime, Async, Distributed, Parallel
+2) App
+	-focused biz areas
+2.5) "OR" Biz planning
+	-"operations research" --> BIZ
+3)Engineering/Science (w/ Numeric Accuracy)
+4)Embedded
+	-"IoT" (Robotics)
+		>IoT = Internet of Things
+5)"SPL" = S/W Product Line
+	-Large core (the "framework") & small plug-in (Add-on) variations (features)
+6)WEB/Mobile Apps (Games)
+	-Sub-Apps Area
+7)AI (robotics)
+	-ML = machine learning
+	-data mining
+[8]Legacy
+	-"Screen Scraping"
+
+Chapter 2 -- Software Development Methodologies
+
+"The [S/W] Process Framework"
+
+5 "Phases" (may overlap)
+     |  /0. Pre-Contract/
+     |  1. Communication - Understand the customers objectives
+                           for the project and to gather the
+                           requirements that help define
+                           software features and functions.
+     |  2. Planning      - Also called a software project plan.
+                           Describes the technical tasks that
+                           need to be done, the risks, resources
+                           work products and work schedule.
+     |  3. Modeling/Architecture Design - Create models to
+                                          better understand 
+                                          software requirements
+                                          and the design that
+                                          will achieve those
+                                          requirements.
+     |  4. Build
+                                         - produce actual code
+                                           and the tests to 
+                                           uncover bugs in
+                                           that code.
+     |  5. Deploy/Ship                   - delivered to the customer 
+                                           who evaluated the
+                                           product and provides
+                                           feedback.
+
+**Project Triangle also known as the iron triangle --> For project "Feasibility" (Go/No-Go Decision)
+
+BETTER	    /\ FASTER
+Features/  /  \   Timeline/
+Scope	  /    \    Deadline
+   	     /______\
+     	  CHEAPER
+	    Effort/Cost
+
+-1- Communication/ Requests(Arch)
+	-customer = $$
+	-user = plays with program
+	-SME = Subject matter expert
+-2- Planning
+	-WBS
+	-Task Dependencies
+	->GANTT Chart
+		>WBS as task per row
+		-a spreadsheet
+	-Assigned tasks to members
+-3- 
+
+It's a triangle because changing one leg of the triangle might
+change the leg of another.
+
+ACRONYMS covered in this lecture(alphabetical order):
+-WBS (work-breakdown structure): breaks the work down into a structure.
+
+Take the entire work of a project and break it down into
+substantial chunks. takes those chunks and break it down into
+its principal components. continously iterate until at a the lowest level we have a single coherent task that a person
+could fully understand.
+
+example of WBS: GANTT chart
