@@ -68,8 +68,11 @@ Chapter 2 -- Software Development Methodologies
 
 "The [S/W] Process Framework"
 
+These 5 phases belong to every software engineering methodology.
+
+
 5 "Phases" (may overlap)
-     |  /0. Pre-Contract/
+     |  /0. Pre-Contract/- Initial effort that you pay for
      |  1. Communication - Understand the customers objectives
                            for the project and to gather the
                            requirements that help define
@@ -89,37 +92,67 @@ Chapter 2 -- Software Development Methodologies
                                            and the tests to 
                                            uncover bugs in
                                            that code.
+
      |  5. Deploy/Ship                   - delivered to the customer 
-                                           who evaluated the
+                                           who evaluates the
                                            product and provides
                                            feedback.
 
 **Project Triangle also known as the iron triangle --> For project "Feasibility" (Go/No-Go Decision)
 
+"can we and should we do the project"
+
 BETTER	    /\ FASTER
 Features/  /  \   Timeline/
 Scope	  /    \    Deadline
    	     /______\
-     	  CHEAPER
+     	  Resources
 	    Effort/Cost
+Scope(what must be built)
+Schedule(swhen it must be built by)
+Resources(how much does it cost)
 
 -1- Communication/ Requests(Arch)
-	-customer = $$
+	-customer = is the one who pays for the program
 	-user = plays with program
-	-SME = Subject matter expert
+	-SME = Subject matter expert(smart user)
+
+example of customer vs user(siska example):
+You live in your mom's basement and your mom buys you
+something from fry's electronic she's the customer and 
+your are the user.
+
 -2- Planning
 	-WBS
 	-Task Dependencies
-	->GANTT Chart
+	->GANTT Chart(chart that lists all the tasks)
 		>WBS as task per row
 		-a spreadsheet
 	-Assigned tasks to members
--3- 
+-3- Modeling/architecture Design
+    analysis(ooa) ie objected-oriented analysis
+-4- Build
+    -Detailed Design of medium-sized boxes
+    -Unit Design
+    -Unit Code
+    -Unit Test 
+    -Small-scale integration testing
 
 It's a triangle because changing one leg of the triangle might
 change the leg of another.
 
-ACRONYMS covered in this lecture(alphabetical order):
+ACRONYMS/Definitions covered in this lecture(alphabetical order):
+GANTT Chart:chart that list all the tasks. Task per row
+and the time it will take to finish the time, usually
+organized in a speadsheet.
+OOA(Object Oriented Analysis): the 3rd phase of any
+software engineering methodology; it is the process of discovery where a development team understands and models the requirements of the system
+-RfP(request for proposal): "propose for us what you think
+we should do because we want this things within this timeline"
+-RfQ(request for quotation): Company provides a set of features
+and timeline for a project and then invites companies to bid
+for a contract.
+-SME(subject-matter expert): smart user
 -WBS (work-breakdown structure): breaks the work down into a structure.
 
 Take the entire work of a project and break it down into
