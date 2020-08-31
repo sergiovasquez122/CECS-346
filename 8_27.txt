@@ -1,4 +1,83 @@
-CECS 343 8/27/2020
+8_25
+Documentation / comments
+
+write your pseudocode in English.
+you have to turn your pseduocode into actual code.
+pseduocode is writing down your algorithm
+with 'no frills'. Whatever feels comfortable and explains
+what's going on.
+
+
+Read Me:
+ReadMe is a simple set of instructions.
+Just explains how to get started and
+what it does.
+
+the components of a README.
+Authors
+Class
+Parts / Modules
+How do they come together
+How to install the program
+How to run the program
+
+coding style: if it's easier to read it's easier to understand.
+
+How software should be designed.
+Reasonable person standard.
+submit what you have on time.Honesty, askfor help early.
+Have good social skills, commmunication is an important
+skill to have.
+
+Smart Person standard
+Always be ready to show your boss visible progress. 
+
+Maintain your moral
+If you are not feeling well your software engineering ability
+plummets. Try to focus on what you can do in the next 5 minutes
+or the next hour. A series of success build your morale, arrange
+for yourself to win.
+
+rule #0 fast rule:
+get to the beginning. have tangible work. clean up your
+work when it is working.
+
+rule #1 don't preoptimize:
+focus on the now. premature optimization is the evil of 
+all programming. 
+
+rule #2 kill bug hunts:
+90% of development time is on killing runtime bugs.
+
+rule #3 the 2-story story
+-top-story is written in the user's problem domain languag
+-bot-story is comp-sci stuff
+how? via CRC sim
+1. user-scenario: 1 user role
+2. use-case
+3. write CRC card
+4. simulate CRC
+
+rule #4: EIO(expected input-output)
+given input x and output y get your program
+to produce the same thing.
+useful when doing detailed design.
+Not doing anything for the future, only fulfilling
+the requirements.
+
+rule #5: half-day rule:
+Figure out what a half days work can achieve. Make
+that your goal for the full day. If you do early then you
+get to work on more stuff. gives good estimation practice.
+
+rule #6: clean the page:
+Before you turn in your code make it look clean.
+Don't develop a reputation for turning in poor-quality code.
+
+
+
+
+8_27
 
 Chapter 1 -- What is Software Engineering?
 
@@ -44,21 +123,28 @@ Ch 1.1.2 Application "Domains" (PBM areas)
 
 8 Areas
 
-1) System Programing
-	-ex: OS, Network, RTime, Async, Distributed, Parallel
-2) App
+1) System Programing(programs used by other programs)
+	-ex: OS, Network, RTime, Async, Distributed, Parallel,
+         compilers for IDES, file utilities for OS
+2) App(Programs that address a specific business need)
 	-focused biz areas
+    -auto email marketer
+    -low disk space network scanner
 2.5) "OR" Biz planning
 	-"operations research" --> BIZ
-3)Engineering/Science (w/ Numeric Accuracy)
-4)Embedded
+3)Engineering/Science (w/ Numeric Accuracy) (number crunching programs that intake data and perform calculations)
+examples:space flight simulator, molecular breeding
+4)Embedded(programs controlling low leve functions of a broader system)
 	-"IoT" (Robotics)
 		>IoT = Internet of Things
-5)"SPL" = S/W Product Line
+5)"SPL" = S/W Product Line(mass-marketered programs that provided specific capabilities)
 	-Large core (the "framework") & small plug-in (Add-on) variations (features)
-6)WEB/Mobile Apps (Games)
+examples:microsoft office, visual studio.
+6)WEB/Mobile Apps (Games) (programs for tablets or smart phones)
 	-Sub-Apps Area
-7)AI (robotics)
+7)AI (robotics) (programs that utilizes heuristics to
+make decisions or provide deep insight that would normally
+be difficult to use with straight forward analysis.
 	-ML = machine learning
 	-data mining
 [8]Legacy
@@ -112,6 +198,16 @@ Scope(what must be built)
 Schedule(swhen it must be built by)
 Resources(how much does it cost)
 
+Any software engineering methodology should encompass theses
+five activities
+-1- communication
+-2- planning
+-3- modeling
+-4- construction
+-5- deployment
+
+what each activities entails is detailed below
+
 -1- Communication/ Requests(Arch)
 	-customer = is the one who pays for the program
 	-user = plays with program
@@ -138,21 +234,115 @@ your are the user.
     -Unit Test 
     -Small-scale integration testing
 
+the essence of practice
+1. understand the problem (communication and analysis)
+who are the customers?
+what don't I know? what do I need to solve this problem?
+2. plan a solution (modeling and software design)
+Have I solved a similar problem? is there a pattern
+in the problem that can lead to a solution? is there
+any software I can piggyback on to solve this problem.
+3. carry out the plan(code generation)
+Does the solution conform to the plan? Has each part
+of the solution been proven to be correct.
+4. examine the result for accuracy(testing and quality assurance)
+
 It's a triangle because changing one leg of the triangle might
 change the leg of another.
 
-ACRONYMS/Definitions covered in this lecture(alphabetical order):
-GANTT Chart:chart that list all the tasks. Task per row
+chapter 5 Agile Development
+
+the agile process encompasses incremental delivery. An agile
+process reduces the cost of change because software is released
+in increments and change can be better controlled within an increment.
+
+the agile software process addresses the following assumptions
+
+1. It is difficult to know in advance which software requirements will persist and which will change. It is equall like to predict how customer priorities will change as the project progresses
+
+2. It is difficult to know how much design is necessary 
+before construction is used to prove the design
+
+3. analysing, designing, constructing and testing software is
+not as predictable as we like to thin.
+
+what agile tries to do is to manage unpredictability by 
+adapting the process. hence the agile process is adaptable.
+
+the agile principles.
+
+1. highest priority is to satisfy customer through early
+and continous delivery of valuable software
+
+2. welcome chaning requirements, even late in development
+
+3. deliver working software frequently
+
+4. business people and developers must work together daily
+throughout the project
+
+5. build projects around motivated indiviuals. give them the
+resources they need to succeed.
+
+6. the most effecient and effective way to communicate within
+a development team is face-to-face conversations.
+
+7. Working software is the primary measure of progress
+
+8. agile processses promote sustainable development. the sponsors, developers and users should be able to maintain a constance pace indefinitely.
+
+9. continous attention to technical excellence and good design
+enchanes agility.
+
+10. simplicity- the argt of maximiing the amount of work not done
+
+11.the best architecture, requirements and designs emerge form
+self-organizing teams
+
+12. at regular intervals, the team reflects on how to become more effecgive then tuens and adjuts its behavior accordingly.
+
+
+
+
+
+
+ACRONYMS/Definitions covered in lecture(alphabetical order):
+-activity: refers to a board objective(communication with stakeholders) and is applied regardless of the application domain.
+-action: encompasses a set of taks that produce a major work product.
+-communication phase: the 1st phase of any software engineering
+methodology. In this phase we communicate with the customer
+to understand thier objectives and also to gather requirements
+to help use understand the software features and functions.
+-construction phase: the 4th phase of any software engineering
+methodology. In this phase we generate code and test to find
+errors in that code.
+-deployment: the 5th phase of any software engineering methodology.the software is delivered to the customers who
+evaluates the software and provides feedback.
+-software engineering: The application of a system, discplined
+,quantifiable approach to the devlopment, operation, and
+maintenance of software; that is, the application of engineering
+to software.
+-GANTT Chart:chart that list all the tasks. Task per row
 and the time it will take to finish the time, usually
 organized in a speadsheet.
-OOA(Object Oriented Analysis): the 3rd phase of any
-software engineering methodology; it is the process of discovery where a development team understands and models the requirements of the system
+-OOA(Object Oriented Analysis)/Modeling: the 3rd phase of any
+-software engineering methodology; it is the process of discovery where a development team understands and models the requirements of the system
+-planning: the 2nd phase of any software engineering methodology. This phase develops a software project plan-
+the work to be done, the risk, resources, and work schedule.
+-process: a collection of activities, actions and
+tasks that are performed when some work product is to be 
+created.
+-Refactoring: making local code simpler
 -RfP(request for proposal): "propose for us what you think
 we should do because we want this things within this timeline"
 -RfQ(request for quotation): Company provides a set of features
 and timeline for a project and then invites companies to bid
 for a contract.
 -SME(subject-matter expert): smart user
+-task: focuses on a small, but welll-defined objectivetaht
+produces a tangible outcome. An example is conducing a unit test.
+-XP: extreme programming, the most widely used approach
+to agile software development.
 -WBS (work-breakdown structure): breaks the work down into a structure.
 
 Take the entire work of a project and break it down into
