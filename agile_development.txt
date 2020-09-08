@@ -1,0 +1,85 @@
+agile methods were developed in order to 
+overcome weaknessses in conventional software development
+practices. agile methods are not applicable to 
+all software engineering projects.  
+One of the most compelling aspects of agile of agile
+is it ability to reduce the the costs of change through the 
+software process.
+
+the problem with the software engineering models posed in
+chapter 4 is that they don't take into account the people
+constructing the software. Software engineers are human
+and vary greatly which the prescriptive software engineering
+methodologies don't take into account.
+
+an agile team is a nimble team able to respond to change.
+change is what software development is about. support for
+change should be built into everything that goes into the 
+software. the pervasiveness of change is the primary driver
+for agility.    
+
+agile recognizes that planning in an uncertain world
+has its limits and thus a project plan must be flexible.
+
+agility can be applied to any software process.
+
+an agile process reduces the cost of change because software
+is released in increments and change can be better controlled
+with an increment.
+
+agile addresses key assumptions in the majority of software projects
+1. It is difficult to predict which software will stay and which will change.
+2. It is difficult to predict how much design is necessary
+before construction is used to prove the design.
+3. analyzing, designing and construction software is not as 
+easy as we might think it should be.
+
+the 12 principles of agile
+
+1. Highest priority is to satisfy the customer through early and continous delivery of software.
+2. Welcome changin requirements, even late in development.
+3. Deliver working software frequently.
+4. Buiness people and developers must work together daily throughout the project
+5. Build project around motivated indiviuals. Give them the environment and supporth they need, and trust them to get the job done.
+6. The most effecient and effective method of conveying information to an within a development team is face-to-face conversations
+7. working software is the primary measure of progress.
+8. agile processes promote sustainable development.
+9. continous attention to technical excellence and good design enhances agility.
+10. simplicity-the art of maximizing the amount of work not done-is essential
+11. the best architecture, requirements and design emerge from self-organizing teams
+12. at regular intervals, teams reflect on how to become more effective then tun and adjust it behavior accordingly.
+
+extreme programming is the most widely used approach to 
+agile software development.
+
+project velocity is the number of customer stories implemented
+during the first release. simple design is always preferred
+over a more complex representation. refactoring improves the
+internal structure of a design without changing its 
+external functionality or behavior. refactoring improves the
+design of the code after it has been written.
+
+coding: knowing the exam questions before you start to study
+makes studying easier because you can focus only on the
+questions that will be asked. this is similar to the coding
+aspect to coding, we developed unit test so the the programmer
+more fully understands what must be implemented in order to
+pass the test. The programmer code can then be unit-test immediately and the programmer thus then get immediate feedback.
+
+pair programming: two people work together at on
+computer workstation to create code for a story. provides
+two heads to solve one problem and allows code review at the
+same time.also keeps the development focues on
+the problem at hand.
+
+testing: unit-test are created using a framework that allows
+them to be automated. xp acceptance tests, also called customer tests,are specificed by the customer and focus on overall system
+features and functionality that are visible and reviewable by the customer. acceptance tests are derived from user stoies that have been implemented as a software release.
+
+ability is what you're capable of. motivation determins
+what you can do. attitude determines how well you do it.
+
+
+
+
+
