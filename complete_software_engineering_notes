@@ -2,6 +2,123 @@ CECS 343 8/27/2020
 
 Chapter 1 -- What is Software Engineering?
 
+-engineering approach to develop software.
+    -building construction analogy.
+    -we will never complete the project
+
+-Systematic collection of past experience
+    -techniques
+    -methologies
+    -guidelines
+
+IEEE definition of what software engineering
+
+Software engineering is the appliction of a systematic,
+disciplines, quantifiable approach to the development,
+operation and maintenance of software; that is, the
+application of engineering to software.
+    
+It is often the cas that software products
+
+-Fail to meet user requirements
+-expensive
+-difficult to alter, debug, and enhance
+-often delivered late
+-use resources non-optimally
+
+hardware cost has dropped significantly but now the software
+is much more expensive. 
+
+a virtue of software
+-relatively easy and faster to develop and to change
+-consumes no space, weight, or power
+-otherwise all might as well be hardware
+
+the more complex the software is the harder it is to change
+-further the more changes made to a program, the more
+complex it becomes
+
+what factors are contributing to the software crisis?
+
+-larger problems
+
+-poor project management
+
+-lack of adequate training in software engineering.
+
+-what is wrong with the exploratory style
+---can successfully be used for developing only small programs
+---programs are unmaintainable
+---unsuitable for team environments
+
+----two fundamental techniques to handle complexity
+-------abstraction
+focus attention on only one aspect of the problem
+and ignore other aspects and irrelevant details
+--also called model building
+--simplify a problem by omitting unnecessary details
+---------------example
+a map is an abstract representation of a country. various
+types of maps(abstractions) possible. 
+-----------------
+every problem has more than one type of abstraction.
+focus on specific aspect and ignore the rest.different type
+of models help us understand different aspect of the problem.
+for complex problems, a single level of abstraction is inadequate. a hierachy of abstractions may have to be construction.
+
+hiehcrach of mdeosl:
+----a model in one layer is an abstraction of the lower layer model
+
+-------------------abstraction of complex formsD
+asked to understand all life forms that inhabit the earth.
+
+try to build an abstraction hierachy.
+
+animal kingdom.
+
+what is a model?
+
+A model is an abstraction of a problem.
+
+why develop a model? that is how does construction a model help?
+
+we develop a model because of the cognitive limitation of the
+human brain. 
+
+give some examples of models.
+
+A map or the animal kingdom are examples of models.
+
+
+-------decomposition
+-decompose a problem into many small independent parts
+-the idea is that each small part would be easy to graph and
+therefore can be easily solved.
+-the idea is that each small part would be easy to graph and therefore can be easily solved.
+-the full problem is solved when all parts are solved
+-any arbitrary decomposition of a problem may not help
+-the decomposed parts must be more or less independent
+of each other
+
+example use of decomposition principle
+
+-you understand a book better when the contents are organized into independent chapters
+
+------why study software engineering?
+-to acquire skills to develop large programs
+-handling exponential growth in complexity with size
+-learn systematic techniques in software engineering
+-to acquire skills to be a better programming
+-----jobs vs project
+-job repetition of very well-defined and well understood tasks with very little uncertainity
+-exploration the outcome is very uncertain
+-project in the middle! has challenges as well as routine
+
+----types of software engineering products
+--products(generic software)
+--services(custom software)
+
+
 1)Why is development time so long?
 	-bugs
 	-building the wrong thing (you didn't get the info right when figur=ing out what you should build)
@@ -170,6 +287,103 @@ Not Value-Added:
 --SKIP CHAPTER 3--
 
 Chapter 4 Software Development MO's (aka Development "Process")
+
+-every program is developed according to a life cycle model
+
+-emphasis has shifted from error correction to error prevention
+
+-modern practice emphasize detection of errors as close 
+to their point of introduction as possible
+
+-modern practice coding is only a small part of the program development effort
+
+-alot of effort is being paid to program specification
+
+-periodic reviews are being carried out
+
+-software testing has become systematic
+
+-visibility means production of good quality, consistent and standard documentation
+
+-in the past very little attention was being given to producing good quality and consisten documents
+
+-project manager can accurately determine at what stage a project is on
+
+-projects are being properly planned
+
+------------------life cycle models-----------------------
+
+-a life cycle is a set of stages to which a thing evolves
+
+-software has a life cycle
+
+-conceptualize->specify->design->code->test->deliver->maintain->retire
+s
+-A software life cycle model also process model or SLDC
+-A descriptive and diagrammatic model of software life cycle
+-Identifies all the activities undertaken during product development
+-Establishes a precedence ordering among the different activities
+-divide life cycles into phases
+
+why model life cycle?
+
+-a graphical and written description
+--helps common understanding of activities among the software developers
+--helps to develop inconsistencies, redundancies and omissions in the development process.
+--helps in tailoring a process model for specific projects
+
+-when a program is developed by a single programmer
+--the problem is within the grasp of an individual
+--when team development informal will create problem
+
+-when software is being developed by a team
+--there must be more systematic development
+
+--A life cycle model
+---defines entry and exit criteria for every phase.
+---defines milestones to the project
+----track the progress of the project
+----phase entry and exit are important milestones
+---the project manager can accuractely tell what stage the project is on
+---99% complete syndrome
+
+process models
+----------------
+waterfall
+v model
+evolutionary
+prototyping
+spiral models
+agile models
+
+------------
+software life cycle is a series of identifiable stages that a software product undergoes during its life time:
+	-feasibility study
+	-requirements analsysis and specification
+	-design
+	-coding
+	-testing
+	-maintenance
+
+classical waterfall model
+--divides life cycle into following phases
+--feasibility study
+--requirements analysis and specification
+--design
+--coding and unit testing
+--integration and system testing
+--maintenance
+
+stages are done sequentially.
+
+simplest and most intuitive model
+
+idealistic model
+
+maintenance phase consumes maximum effort
+tesing phase consumes the maximum effort among
+development phases
+
  __________________________________
 | Knobs == Parameter to "tune"     |
 | Tune Wrong -> Bad Estimate       |
