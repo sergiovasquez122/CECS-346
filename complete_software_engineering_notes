@@ -384,6 +384,79 @@ maintenance phase consumes maximum effort
 tesing phase consumes the maximum effort among
 development phases
 
+--feasibility study
+---use the project triangle
+
+main aim of feasibility study is to determine
+whether the software is finacially worthwhile
+and technically feasible
+-roughly understand what customer wants
+
+---requirements analysis and specification
+--understand the exact requirements of customers
+--understand what the customer wants
+--review requirement problems
+--incosistencies
+--anomalies
+--incompleteness
+
+--orgranize into a software requirements specification document
+
+--gather relevant data
+---usually collected from the end-users through interviews and discussion
+
+----design
+structures analysis
+structured design
+
+--high-level design
+--decompose the system into modules
+--represent invocation relationships among the modules
+
+--detailed design
+--oop design
+identify the relationship among the objects
+based on that we develop the design
+--OOD has several advantages
+---lower development effort
+---lower development time
+---better mantainability
+
+coding and unit testing
+--each modue of the design is coded
+--each module is unit tested
+--each module is documented
+
+integration and system testnig
+different modules are integrated in a planned moanner
+--modlues are integrated through a number of steps
+--during each itnegration step the partial integrated system is tested.
+--test if they are interface bugs
+
+--system testing
+---the whole system is checked to see if it meets the requirements that have been expressed in the documents
+
+--maintenance of any software
+---requires much more effort than the effort to develop the product itself
+
+iterative waterfall model
+
+assumes that no defect is introduced during any development activity
+
+the later the phase in which the defect gets detected, the more expensive is its removal
+
+in practice defects do get introduced in almost every phase of the life cycle.
+
+errors should be detected in the same phase
+
+waterfall strengths
+--easy to understand, easy to use
+
+waterfall cons
+--all requirements must be known upfront
+--integration is one big bang at the end
+--little opportunity for customer to preview the system
+
  __________________________________
 | Knobs == Parameter to "tune"     |
 | Tune Wrong -> Bad Estimate       |
