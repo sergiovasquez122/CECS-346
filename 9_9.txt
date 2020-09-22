@@ -1,0 +1,104 @@
+the manifesto comes in two form.
+
+the twelve manifesto items
+
+four thing that are preferred over this kind of stuff.
+
+agile is named that way to be flexible to things around.
+to be nimble. to be able to change to things around you.
+
+4 more main motivations for agile
+
+death marches-death marches are not pretty.
+
+1. indiviuals interactions over processes
+
+2. working software over completed docs
+
+3. customer collaboration over contract negotiation
+big bang-work at what user want. come up with a cost 
+estimate. 
+
+4. flexible to change over follow the plan.
+
+you're talking with the customers all the time.
+talking amongst the developers all the time.
+
+agile manifesto-better half
+
+1. satisfy the customer through early and continous delivery
+
+2. accept changing requirements at all times
+
+3. deliver evolving products every 2 to 8 weeks
+
+7. measure progress in working software features
+
+10. simplicity is better than quantity in code
+
+11. let the team self-organize
+
+agile-stanup
+-start of day
+-stand at the program board
+-15 minutes or less
+-everyone answers 3 questions
+1. what was completed yesterday
+2. what plan to complete today
+3. any obstacles?
+
+within a team it's important to let everyone know what's going on.
+
+prototyping
+special techinical 
+new api
+new algortihm
+not to show user
+2. mfs
+build a prototype with a minimum feature set so that you can
+show more stuff.
+-black box. user doesn't get a feel for how it is working
+-main scenario only
+-minimum viable product: smallest thing they can build to
+see if the user will want
+
+get a copy of all the files 
+the manifest describes the file and the relative path to the file
+
+each team member interface with each other and themselves.
+
+write program that copies files from one place to another.
+
+Assume cmd line was this:
+C:> myvcs create c:/projs/mypt c:/repo/p1
+
+343-01
+time-stamp: <2020-09-08 11:27:58 Chuck Siska>
+--------
+200908 Tuesday
+
+Sample Manifest:
+
+source and the targets are absolute names
+
+<File: .man-1.rc
+1. C:> myvcs create c:\projs\mypt\ c:\repo\p1
+2. 2020-09-08 11:27:46
+3. P4086-L11-C3201.txt @ bot/a/b/
+4. P1234-L23-C812.js @ bot/
+5. P4321-L5193-C6939.js @ /
+6. P1001-L633-C7991.txt @ bot/
+<EOF>
+
+What did the Project tree look like?
+Sole contents of Project Tree:
+c:/projs/mypt/bot/a/b/fred.txt
+c:/projs/mypt/bot/alice.js
+c:/projs/mypt/main-pgm.js
+c:/projs/mypt/bot/d/fred.txt 
+
+
+
+
+
+

@@ -1,0 +1,560 @@
+CECS 343 8/27/2020
+
+Chapter 1 -- What is Software Engineering?
+
+1)Why is development time so long?
+	-bugs
+	-building the wrong thing (you didn't get the info right when figur=ing out what you should build)
+		>Create a Spec document when you determine what it is you should build
+	-process info = 1M to 1T Bits & ise it to control execution paths
+	-Factor of 1,000 to 1B more complex than other kinds of engineering
+		How to Fix? (best to use "agile development")
+		- ***Simplify Execution Paths (Avoid Surprise)
+			>example of exec path: "if-then-else"
+			>controlled by the values in more than one variable
+		- Reduce Complexity of Data flowing between "Boxes" (aka reduce # of interconnections)
+			>at any given level when looking at your progam, you want that part to look simple
+			>Box: a group of code that has a defined inteface connected to it
+		- Reduce # of Data Paths
+2)Why are development costs high?
+	-hard to predict/estimate effort due to complexity (& unforeseen bugs)
+	-labor intensive
+	-* most effort is in find/fix RUNTIME bugs
+	-*** Big percentage of projects fail
+3)Why are there bugs in completed programs?
+	-# of pathway combinations too big to test, ever. 
+4)Why do we maintain existing (aka "Legacy") programs for so long? (aka "cash cows")
+	-we don't want to spend the money to re-write since eventually they will lose their use
+	-It works, so why bother
+5)Why is it hard to measure development progress?
+	-WBS helps a lot
+		>Your list of tasks and subtasks
+		>"Work Breakdown Structure"
+	-"90-90" rule
+		>80% overun
+		>After 90% of the time(say you've built 90% of the software), you've acutally done only 50%, 
+		 you have another 90% left (this is where you find most of the RT bugs
+	-*** Most metrics[measurements] are poor & have (hidden) giant "error bar"
+6)When is the development of a new type of program (New-Dev) easy and low risk?
+	-use specialty-area "framework" (or "library") where your "PGM" is reduced to simple "biz logic"
+		1. you write 10-15% of the total code
+		2. framework is "preview"
+		3. need your PBM to be VERY CLOSE to speciality-area
+Ch 1.1.2 Application "Domains" (PBM areas)
+
+8 Areas
+
+1) System Programing
+	-ex: OS, Network, RTime, Async, Distributed, Parallel
+2) App
+	-focused biz areas
+2.5) "OR" Biz planning
+	-"operations research" --> BIZ
+3)Engineering/Science (w/ Numeric Accuracy)
+4)Embedded
+	-"IoT" (Robotics)
+		>IoT = Internet of Things
+5)"SPL" = S/W Product Line
+	-Large core (the "framework") & small plug-in (Add-on) variations (features)
+6)WEB/Mobile Apps (Games)
+	-Sub-Apps Area
+7)AI (robotics)
+	-ML = machine learning
+	-data mining
+[8]Legacy
+	-"Screen Scraping"
+
+Chapter 2 -- Software Development Methodologies
+
+"The [S/W] Process Framework"
+
+5 "Phases" (may overlap)
+     |  /0. Pre-Contract/
+     |  1. Communication
+     |  2. Planning
+     |  3. Modeling/Architecture Design
+     |  4. Build
+     |  5. Deploy/Ship
+
+**Project Triangle --> For project "Feasibility" (Go/No-Go Decision)
+
+BETTER	    /\ FASTER
+Features/  /  \   Timeline/
+Scope	  /    \    Deadline
+   	 /______\
+     	  CHEAPER
+	    Effort/Cost
+
+-1- Communication/ Requests(Arch)
+	-customer = $$
+	-user = plays with program
+	-SME = Subject matter expert
+-2- Planning
+	-WBS
+	-Task Dependencies
+	->GANTT Chart
+		>WBS as task per row
+		-a spreadsheet
+	-Assigned tasks to members
+
+Chapter 2 (cont.)
+
+5 Phases
+
+Previous Lecture: (8/27)
+
+1) Communication
+2) Planning
+___________________________
+
+3) Modeling/Architecture Design
+	-Sometimes called "Analysis" (OOA)
+		> Object Oriented Analysis
+	-User Scenario per Role
+	-Use Case / Role + Task
+	-CRC Card for every Agent
+	-CRC Simulation: Card per Person
+
+4) Build
+	-Detailed Design of Medium-sized boxes
+	-Unit Design
+	-Unit Code
+	-Unit Test
+	-Small-scale integration
+	-I&T (Big-scale) 
+		>Integration & Test
+	-V&V
+		>Verification Test & Validation <-Users like it
+		  ^Works per specs (requests)
+
+5) Deploy/Ship
+	-Package
+	-Install Test
+	-On-site "Acceptance" Test
+	-Manuals
+	-Training
+
+
+Ch 2.2.2 "Admin" Tasks (aka "Umbrella")
+
+>These are Not "Value-Added"
+	-Do not directly result in working delivered program
+
+Value-Added:
+	1. Requests Spec
+	2. Arch/Model/Analysis (OOA)
+	3. Detailed Design and Coding
+	4. Bug Fixing (NOT TEST)
+	5. Integration, Package, Ship
+
+Not Value-Added:
+	1. Risk Management
+	2. Project Tracking
+	3. Tech Review
+		-(code, design, ...)
+	4. QA = "Quality Assurance"
+		-Audit for good practices (policy, procedure)
+		-Testers (newer)
+	5. Measurements (aka "Metrics")
+		-For prediction (aka estimation)***
+		-Ex: LOC = "Lines of Code"
+	 	     SLOC = "Sorce Linces of Code" [Adding a K in front means 1,000 Lines of Codes]
+		     "Function Points" - very complicated
+		     Cyclomatic Complexity [Count Loops]
+		-Don't Forget Error Bars
+	6. "Work Products" * Management 
+		-Non-code documents
+		-Ex: Customer Status Monthly
+		     Preliminary Design Review Documents
+
+--SKIP CHAPTER 3--
+
+Chapter 4 Software Development MO's (aka Development "Process")
+ __________________________________
+| Knobs == Parameter to "tune"     |
+| Tune Wrong -> Bad Estimate       |
+| J. Von Neumann                   |
+|__________________________________| <-- Quote
+
+(0) Anarchy = (absence of) No visible method
+
+1) Phases + Gates
+	-Big Project Issue: Request Changes
+	-Requests <-> Architecture <-> Design & Code <-> ... <-> Ship -> Users get to try it [Waterfall diagram]
+	-Big Con: Length of user feedback loop***
+	-Q: Users like it? -> Validation
+
+Chapter 4 cont
+
+Previous Lecture (9/1)
+
+0. Anarchy
+1. Phases + Gates
+____________________________________
+
+2. Spiral "Model" (-Barry Boehm)
+
+	_________________
+       | custom == $$    |
+       | user == use pgm |
+       |_________________|
+
+	Spiral == waterfalls
+	-You can check with user 
+
+ Pack/Ship  RQT    ARCH
+       \     |     /
+  -->___\____|____/___
+      ___\___|__ /   |
+      |	  \  |  /    |
+      |	|  \ | /|    |
+      | |__/_|_\|    |
+      |___/__|__\____|
+         /   |   \
+        /    |    \
+     I&T    UNIT    DETAILED
+	   CODE &     DESIGN
+	    TEST
+
+3. V-Model (cute, but obselete)
+
+	REQTS\.............../Verify
+	  ARCH\............./I&T
+       Detailed\.........../Small Scale
+	  Design\........./  Integration
+	Unit Code\......./Unit Test
+                  \_____/
+
+4. Evolutionary
+			   __________________________________________
+	-Like spiral, but |Test Each Working Feature Slice with users|
+			  |__________________________________________|
+
+
+[5. Concurrent]	
+	-split teams at multiple geographic sites
+
+[6. Component-Based]
+	-use COTS
+		> "Commercial (or common) Off-The-Sheld" S/W
+
+	-usually:
+		1. 3rd party LIB
+			> you call fcns
+		2. Frameworks
+			> you inherit & add method overrides
+ 	_________________________________________
+       | RFP = "Request For Proposal"            |
+       |   -Tell them what would work & extra    |
+       |     things/features needed              |
+       | RFQ = "Request For Quotes"              |
+       |   - $$ for the PROPOSED task            |
+       |_________________________________________|
+
+7. Agile
+	-2001 manifesto(12 pts/items)
+	-4 motivations = Avoid:
+		> Death Marches [168 hrs/week]
+		> User Surprises
+		> Overly-Rigid Design
+		> Gold-Plating
+			- We're gonna need it
+			- For later REUSE
+			- I think this is MAYBE required
+8. The "Unified" Process (Model)(in Section 4.3)
+	-UML = Unifies Modeling Language
+		>Automated Tool Help ("Rational")
+	-Created by the "Triplets" (Booch, Rumbaugh, Jacobson)
+		>Merged Models 
+		>OMG = Object Management Group
+	-4 keys:
+		1. Driven-by Use-Case
+		2. Arch-Centric
+		3. Iterative (Feature Set Slices)
+		4. Incremental (Best Slices First)
+			> *Show Users	
+
+Previous Lecture (9/3)
+
+Chapter 4
+____________________________
+
+Chapter 5 Agile (2001)
+
+4 motivations - Refer to 9/3 Notes under 7. Agile
+
+4 preferred values
+	1. (II > PT)
+		-Individuals & Interactions over (>) Processes [aka models] & Tools [e.g. UML]
+	2. (WS > CD)
+		-Working Software over Completed Documents
+	3. (CC > CN)
+		-Customer Collaboration over Contract Negotiation	
+	4. (FC > FP)
+		-Flexible to Change over Follow the Plan
+
+Manifesto - has 12 items
+-->Better Half<-- [the items in the manifesto he's showing/teaching us]
+	1. Satisfy the CUSTOMER through early & continuous(often) deliveries
+	2. Accept changing requirements at all times
+	3. Deliver Evolving products every 2 to 8 weeks
+	7. Measure progress in working software features
+	10. Simplicity is better than quantity, in code (no LOC/SLOC measurement)
+	11. ::skull and crossbones:: Let the team self-organize [no leader]
+		> Most companies who say they do agile, do not do this
+
+Side Note: "Scrum" := agile with Time Boxs
+
+Agile Stand-up Meetings
+	-Start of the Day
+	-Stand at the "Progress Board"
+		...Features..|Ready|WIP|QA|Done
+		   "Work In Progress"^   ^"Quality Assurance"
+	-15 minutes (or less)
+	-Everyone answers 3 questions
+		Q1. What was completed yesterday?
+		Q2. What do you plan to complete today?
+		Q3. Any obstacles?
+			> Do due diligence
+_______________________________________________________________________________________
+
+More Chapter 4
+
+Chapter 4.1.3 "Prototyping"
+
+2 Kinds:
+	1. Special Tech
+		> Quick, Rough Proof-of-Concept
+		> AKA Check that new tech works
+		> Ex:
+			-new algorithm
+			-API, new library
+			-new framework to get used to
+			-connect to remote box -- protocol
+		> ***Not to show to users
+	2. NFS-0 (version 0)
+		> Minimum Feature Set
+		> To show working stuff
+		> Black box (no user "drive")
+		> 1st cut of "sweetest" requests
+			-(pry/effort)
+		> *Main scenario
+
+Previous Lecture (9/8)
+
+2 Kinds of Prototyping
+____________________________
+
+Chapter 4 Process Models (aka SW Development Models)
+
+5 Phases:
+	-Comm, Plan, Model, Build, Ship
+How to Begin?
+	-Communication->UC->Model "Pipeline"
+		>For quality requirements
+			-aka "Non-Functional" OR "Ilities"
+						   ^ex: Durabilities
+		>To create requirements
+	-User-Communication
+		>not exact details
+Determine Usage (How Used)
+	-USCENS = "User Scenarios" and EIO's (v0)
+		>EIO= Example Input Output
+	-Extract UCs = "Use Cases" and Pry 'em
+		>user's priority
+		>Work in PRY order!
+	-Sketch UC Steps (aka Main Scen) & EIO's (v1)
+	-Extract Agents (maybe shared by other UCs) & Major Data
+		>Stuff user understands
+		>CRUD ops
+			-Create
+			-Read
+			-Update
+			-Delete
+		>Send/Recieve messages
+	-Note UC extras + EIOs (v2)
+		>kinds of "extended scenarios"
+			-Error Handling
+			-Frills
+			-Variations from STD processing
+			-...
+	-Extract Quality Requirements + Pry 'em
+		>Especially:
+			-Performance?
+			-Distributed?
+			-H/W Hosts
+			  ^Hardware
+			-Legacy "Fit"
+			  ^Ancient Stuff
+	-Sketch 1st UCs "Model" (CRC Architecture)
+	-Eval Model (CRC Sim)
+	______Add it all together_____________
+		-Model Sketch
+		-UC Processing Steps
+		-Some problem domain understanding
+		-Some user agreement feedback
+	______________________________________
+	-USCEN's
+		>2+ Rambling Paragraphs
+			-{Ch 8.2, 8.3.3, 15.4.1}
+		>1 user role (actor)
+		>In user "domain" language
+			    ^aka user problem domain language
+		>What does PA need to do?
+			    ^Personal Assitant
+	-Big Pile of Text (from talking with users)
+		>focus on ACTS & results
+		>what Acts in what order ?
+		>what Pry's? (small,med,large)
+
+Chapter 8.2.3: UC's
+
+6 parts: (1 Task + 1 Role) [parts of a Use-Case]
+
+#3. Summary Paragraph
+	>Cut and paste from USCEN
+#2. One sentence, one verb (SRP [Single Responsibilty Principle])
+	>SOLID/D principles (where SRP is the S in Solid)
+#1. Title (verb + object)
+#4. User role
+#5. Agents & Major data
+#6. Main Scenenario (3-8 steps)
+
+Previous Lecture (9/10)
+
+6 parts of the Use-Case
+____________________________
+
+Chapter 5 Human Aspects
+
+I. Personal and II. Social
+	-"Be Effective"
+	-You,yourself
+		-your "word"
+			-protect it by using "I PLAN to do x"
+			-tell the TRUTH
+			-Be polite & tactful
+			*Avoid raw(harsh) brutal honesty
+	-Keep the "Team"
+		-Group that helps each other
+		-Be "neighborly"
+		-help others
+		-be polite
+		-"heads-up" Truthfulness (but tact)
+		**Ask a question, Don't make a statement
+		*Egos are always involved
+
+^^^^^^^^^^^^^^^^^^^^^^NOT ON AN EXAM^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+	-You must "sell" your ideas
+		1. Ask a question, Don't make a statement
+		2. Use "issue" or "question" not "problem" 
+		3. Keep goals in mind
+			-Review(in your head) how important it is
+		4. Find Standards that give your viewpoint
+	****Show more-than-fairness
+		-Always give more than what you get
+		-kindness & generosity & overdo it
+		-cut others more slack than you think you get
+		*Don't give adivce, just answer questions (or ask some)
+		***Don't "Bad-Mouth" others
+			-Always have something good to say
+		*Show an interest in other's ideas
+	-Be open to possible change. (officially)
+		-"I'm not sure I understand"
+			-"ATMOR"  <--used in the HR deapartment/what manager does
+				-Attract
+				-Train/Develop
+				-Motivate
+				-Organize
+				-Retain
+	-Attention to Detail
+		-Always test your code before "hand-off"
+	***Always come up with a way to test (EIO)
+III. Development
+	-Learn new stuff every waking moment, if you can
+	-basic mechanisms over latest tools
+	-Fred Brooks - Mythical Man-Month
+		("No Silver Bullet")
+		1. Coggins: Best of C++
+			- PBM: Strong Type-Checking
+			- gets in way of big PGMs
+		2. David Parnas
+			- OOP as design, not a LANGUAGE
+
+
+Effort
+|
+|    |_________|
+|    |         |\			"Dinosaur Diagram"
+| | /|         | \
+| |/ |  Build  |  \__|_____
+| |  |         |     |
+|/|__|_________|_____|_________Time
+   ^Solve the    ^Debug & Test
+     problem
+
+		3. Reuse: Capers Jones
+			- All business that have >5K PGMRS have REUSE GROUP
+			- <10% of groups under 500 PGMRS have REUSE group
+		4. Parnas:
+			- no reuse BECAUSE bad design and/or bad docs
+		5. Ken Brooks
+			- 5th version,still don't understand how to generalize it
+			- apropos of SPL's
+		6. C. Jones
+			- There exists few reuseable code modules for sale
+
+
+Previous Lecture (9/15)
+
+Personal, Social, and Development
+____________________________
+
+Chapter 5 continued
+
+****Always give them a 2nd chance  <-- NOT ON EXAM
+
+
+- 5 Toxic Team Posions ~ pg 77  [Jackman 1998]
+	1. Death March
+		- "Frenzied Work Atmosphere"
+	2. High Frustration causes friction
+		- Avoid bad comments
+	3. Poorly coordinated software process(M.O.) 
+						^ Modus operandi
+		- Phases & Tasks MIA
+	4. Unclear Roles
+		- Who does what?
+	5. Continuous repeated [micro-]failures
+- Strong Teams [Cockburn & Highsmith (2001)]
+	1. People > Process (M.O.)
+	2. Politics > People
+
+Modeling/Arch/Analysis                     
+Chapter 8.3.4 CRC Cards                                                                  _____________
+	- Data/Reqts in UCs                                                             |      B      |
+		- Class (/Agent/Object)                                                 |_____________|
+		- Responsibility (agent Actions)                                        |      |      |
+		- Collaborators (other agents, helpers)                                 |______|______|
+	- 3x5 cards                                                                            ↑
+	  _____________________________________                                                |                              
+         |            CLASS TITLE              |           		    ___________        |     _________
+         |_____________________________________|           		   |     A     |  -----┘    |    C    |
+ Action  | Responsibilties   | Collaborators   |        		   |___________|            |_________|
+>methods |   ....            |    ....         |          		   |     |     | --------→  |    |    |
+         |   ....            |    ....    -----|---Collab = link---------→ |_____|_____| ←--------  |____|____|
+         |___________________|_________________| 
+	
+	- CRC Graph == Static Arch  (example above)
+	- Hand-Simulation Use-Case Flow on Graph == Dynamic Arch
+	- All names/phases in User Language
+	- 3 Kinds of CRC Classes/Agents
+		- Entity
+			> Long-lived Agents
+		- Controller
+			> MGRs others
+			  ^manages
+		- Boundary
+			> Talks to outsiders
+
