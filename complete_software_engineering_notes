@@ -451,11 +451,111 @@ errors should be detected in the same phase
 
 waterfall strengths
 --easy to understand, easy to use
-
+--milestones are well understood by the team
 waterfall cons
---all requirements must be known upfront
+--all requirements must be known upfront, in most project requirements change occurs after project start
 --integration is one big bang at the end
 --little opportunity for customer to preview the system
+
+iterative waterfall model
+
+provides feedback
+way to go back and fix problems in stages.
+
+V model
+-variant of the waterfall model
+-emphaszes verification and validation
+-v&v activities are spread over the entire life cycle
+
+pros
+emphasez for veriication and validation of the software
+easy to use
+
+prototyping model
+
+very similar to waterfall model
+before starting actual development
+a working prototype of the system should be built
+
+a prototype is a toy implementation of a system
+
+limited functional capabilities
+low reliability
+inefficient performance
+
+reasons for prototyping 
+
+learning by doing:useful when requirements are only
+partially known
+
+-improved communication
+-improved user involvement
+-reducedd need for documentation
+-reduced maintenance costs
+
+reason for developing a prototype
+-illustrate to the customer
+-developers can examine technical issues
+
+cons
+does not support overlapping of phases
+requirements still need to be know upfront
+does not handle iterations or phases
+does not easily accommodate later changes to requirements
+
+Learning by doing: useful where requirements are only partially known
+
+improved communication
+
+improved user involvement
+
+reduced need for documentation
+
+reduced maintenance costs
+
+impossible to get it right the first time
+
+we must plan to throw away the first version
+
+start with approximate requirements
+
+carryout a quick design
+
+the developed prototype is submitted to the customer for his evaluation.
+
+design and code for the prototype is usually thrown away.
+prototype helps the development of the software
+
+1. difficulty in accomodating change requests during development
+
+2. high cost incurred in developing custom applications
+
+3. heavy weight processes. lots of documentation is produced
+
+huge mountain of documentation.
+nearly half the time the developers are documenting. docuemntation does not produce real software
+
+-requirements are assumed to be fixed from that point on.
+-long term planning is made based on this.
+-key characterisics
+
+incremental development
+
+initial requirements split into feature
+iterative has many releases
+first increment: core
+second increment: add/fix
+final: complete product
+
+each iteration is a short project
+
+which step first?
+
+some steps will be pre-requisite because of physical dependencies
+
+others may be in any order
+
+value to cost ratios may be used
 
  __________________________________
 | Knobs == Parameter to "tune"     |
