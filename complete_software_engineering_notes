@@ -118,10 +118,47 @@ example use of decomposition principle
 --products(generic software)
 --services(custom software)
 
+mini-SWE RULES
+
+prelims
+**Reasonable person std:
+submit what you've got on time
+ask for help early
+
+**smart person std == always be ready to show your boss visible progress
+
+(*)(*) maintain your morale
+
+rule #0: get working software fast
+Brute Force Simple: no frills, use what you know well, go ugly early
+
+rule #1: Never pre-optimize
+-Don't do things for the future; wait till things are required to take the next step
+
+rule #2: kill bug hunts
+-90% of typical dev effort is in run-time bugs
+-make RT bugs look like CT bugs
+-Do add-a-trick-always make trcis result visible on screen
+
+rule #3: the 2-story story
+-top story is written in the user's problem domain language
+-bot story is comp-sci stuff
+1.User-scenario: 1 user role: rambling paragraphs on what users does in that role
+2.Use-case: one role-task: ID agents, actions, interaction messages & results
+3.Write CRC card per agent: class=agent;responsibilities = actions, collaborators = msg-buddies
+4. Simulate CRC architecture: one card per person, sim the task kickoff, interactions and results
+rule #4. Use Sample EIO before you code
+-write expected input-output pairs to drive your detailed design, based on CRC sim architecture
+rule #5 publish goal for your planned day's effort
+-gives you 100% overrun leeway
+-gives you massive estimation practice
+rule #6 clean the page-before you let your code become visible to others
+-don't get a reputation for turning in poor quality code
+-avoid lehman's mummy laws of software development life cycle
 
 1)Why is development time so long?
 	-bugs
-	-building the wrong thing (you didn't get the info right when figur=ing out what you should build)
+	-building the wrong thing (you didn't get the info right when figuring out what you should build)
 		>Create a Spec document when you determine what it is you should build
 	-process info = 1M to 1T Bits & ise it to control execution paths
 	-Factor of 1,000 to 1B more complex than other kinds of engineering
@@ -149,8 +186,8 @@ example use of decomposition principle
 		>"Work Breakdown Structure"
 	-"90-90" rule
 		>80% overun
-		>After 90% of the time(say you've built 90% of the software), you've acutally done only 50%, 
-		 you have another 90% left (this is where you find most of the RT bugs
+		>After 90% of the time(say you've built 90% of the software), you've actually done only 50%, 
+		 you have another 90% left (this is where you find most of the RT bugs) 
 	-*** Most metrics[measurements] are poor & have (hidden) giant "error bar"
 6)When is the development of a new type of program (New-Dev) easy and low risk?
 	-use specialty-area "framework" (or "library") where your "PGM" is reduced to simple "biz logic"
@@ -198,7 +235,7 @@ Chapter 2 -- Software Development Methodologies
 BETTER	    /\ FASTER
 Features/  /  \   Timeline/
 Scope	  /    \    Deadline
-   	 /______\
+   	     /______\
      	  CHEAPER
 	 Effort/Cost
 
@@ -275,7 +312,7 @@ Not Value-Added:
 	5. Measurements (aka "Metrics")
 		-For prediction (aka estimation)***
 		-Ex: LOC = "Lines of Code"
-	 	     SLOC = "Sorce Linces of Code" [Adding a K in front means 1,000 Lines of Codes]
+	 	     SLOC = "Source lines of Code" [Adding a K in front means 1,000 Lines of Codes]
 		     "Function Points" - very complicated
 		     Cyclomatic Complexity [Count Loops]
 		-Don't Forget Error Bars
@@ -288,7 +325,7 @@ Not Value-Added:
 
 Chapter 4 Software Development MO's (aka Development "Process")
 
--modus operanddi:method of operation
+-modus operandi:method of operation
 
 -every program is developed according to a life cycle model
 
@@ -361,7 +398,7 @@ agile models
 ------------
 software life cycle is a series of identifiable stages that a software product undergoes during its life time:
 	-feasibility study
-	-requirements analsysis and specification
+	-requirements analysis and specification
 	-design
 	-coding
 	-testing
@@ -402,7 +439,7 @@ and technically feasible
 --anomalies
 --incompleteness
 
---orgranize into a software requirements specification document
+--organize into a software requirements specification document
 
 --gather relevant data
 ---usually collected from the end-users through interviews and discussion
@@ -621,7 +658,7 @@ ____________________________________
 
 2. Spiral "Model" (-Barry Boehm)
 
-	_________________
+	    _________________
        | custom == $$    |
        | user == use pgm |
        |_________________|
@@ -647,14 +684,14 @@ ____________________________________
 
 	REQTS\.............../Verify
 	  ARCH\............./I&T
-       Detailed\.........../Small Scale
+   Detailed\.........../Small Scale
 	  Design\........./  Integration
 	Unit Code\......./Unit Test
-                  \_____/
+              \_____/
 
 4. Evolutionary
 			   __________________________________________
-	-Like spiral, but |Test Each Working Feature Slice with users|
+	-Like spiral, but |Test Each Working Feature Slice with users         |
 			  |__________________________________________|
 
 
@@ -670,7 +707,7 @@ ____________________________________
 			> you call fcns
 		2. Frameworks
 			> you inherit & add method overrides
- 	_________________________________________
+ 	    _________________________________________
        | RFP = "Request For Proposal"            |
        |   -Tell them what would work & extra    |
        |     things/features needed              |
@@ -698,8 +735,33 @@ ____________________________________
 		1. Driven-by Use-Case
 		2. Arch-Centric
 		3. Iterative (Feature Set Slices)
-		4. Incremental (Best Slices First)
-			> *Show Users	
+		4. Incremental delivery (Best Slices First)
+			> *Show Users
+
+
+how to make CRC(Class Responsibilities Collaborators) Cards?S
+CRC Card analysis: get a group of people together 
+
+each index card contains a list of responsibilities on the left side and the corresponding collaborators on the that enable to responsibities to be fulfilled on the right side.
+
+-----------------------------------------|	
+Customer       |   Account               |
+               |   Branch                |
+withdraw cash  |                         |
+deposit cash   |                         |
+check balance  |                         |
+-----------------------------------------| 
+
+
+1. All participants in the review are given a subset of the
+CRC model index cards. No reviewer should have two cards that
+collaborate.
+
+2. the review leader reads the use case comes to a named object and passed a token to the person holding the object
+
+3. the holder of the card is asked to described the responsibiliies noted on the card. The group determines whether one of the responsibilities satisfies the case requirements
+
+4. If an error is found, modifications are made to the cards. This may include the definition of new classes or revising lists of responsibilties or collaborations on existing cards.
 
 Previous Lecture (9/3)
 
@@ -730,7 +792,7 @@ Manifesto - has 12 items
 	11. ::skull and crossbones:: Let the team self-organize [no leader]
 		> Most companies who say they do agile, do not do this
 
-Side Note: "Scrum" := agile with Time Boxs
+Side Note: "Scrum" := agile with Time Boxes
 
 Agile Stand-up Meetings
 	-Start of the Day
@@ -883,13 +945,13 @@ I. Personal and II. Social
 		-Always give more than what you get
 		-kindness & generosity & overdo it
 		-cut others more slack than you think you get
-		*Don't give adivce, just answer questions (or ask some)
+		*Don't give advice, just answer questions (or ask some)
 		***Don't "Bad-Mouth" others
 			-Always have something good to say
 		*Show an interest in other's ideas
 	-Be open to possible change. (officially)
 		-"I'm not sure I understand"
-			-"ATMOR"  <--used in the HR deapartment/what manager does
+			-"ATMOR"  <--used in the HR department/what manager does
 				-Attract
 				-Train/Develop
 				-Motivate
@@ -944,7 +1006,7 @@ Chapter 5 continued
 
 
 - 5 Toxic Team Posions ~ pg 77  [Jackman 1998]
-	1. Death March
+	1. Death Marches
 		- "Frenzied Work Atmosphere"
 	2. High Frustration causes friction
 		- Avoid bad comments
@@ -959,17 +1021,17 @@ Chapter 5 continued
 	2. Politics > People
 
 Modeling/Arch/Analysis                     
-Chapter 8.3.4 Cards                                                                  _____________
-	- Data/Reqts in UCs                                                             |      B      |
+Chapter 8.3.4 Cards                                                              _____________
+	- Data/Reqts in UCs                                                         |      B      |
 		- Class (/Agent/Object)                                                 |_____________|
 		- Responsibility (agent Actions)                                        |      |      |
 		- Collaborators (other agents, helpers)                                 |______|______|
-	- 3x5 cards                                                                            ↑
-	  _____________________________________                                                |                              
-         |            CLASS TITLE              |           		    ___________        |     _________
-         |_____________________________________|           		   |     A     |  -----┘    |    C    |
- Action  | Responsibilties   | Collaborators   |        		   |___________|            |_________|
->methods |   ....            |    ....         |          		   |     |     | --------→  |    |    |
+	- 3x5 cards                                                                        ↑
+	      _____________________________________                                        |                              
+         |            CLASS TITLE              |           		    ___________        |             _________
+         |_____________________________________|           		   |     A     |  -----┘            |    C    |
+ Action  | Responsibilties   | Collaborators   |        		   |___________|                    |_________|
+>methods |   ....            |    ....         |          		   |     |     | --------→          |    |    |
          |   ....            |    ....    -----|---Collab = link---------→ |_____|_____| ←--------  |____|____|
          |___________________|_________________| 
 	
@@ -1165,7 +1227,1141 @@ Not on Exam:
 	-UML State Transtition TABLE
 	-SOLID/D
 
+Previous Lecture (9/24)
+
+Exam Review
+_____________________________
+
+OOAD Priciples (P)
+		^Principles
+
+-CRC Object Mgrs (by Major Data name):
+  o-Start from UC outside to in
+  o- SRP: have 1 verb, 0+ objs
+  UC: VCS - 1. Create Repository
+	-VCS-User (Dialog with User)
+	-Repo (mgrs of repository items)
+	-Manifest (List of the snapshot items)
+	-Treewalker (of project tree)
+	-File (to scan & to copy the bytes & do pathname stuff)
+	   ^Q: too many verbs? (bad SRP?)
+	-Art-ID (to get unique file version)
+	(^ or Unique-ID (for file versions))[<-- use this to keep it in User-Language]
+
+-SOLID/D_2
+	-S: Single Responsibility Principle (SRP)
+		-Do one thing
+	-O: Open/Closed Principles
+		-Open for extention (sub-subclassing) & Closed for modifications
+		-Auto Upcast from kid class to mom class (aka kid "wears" a "mom hat")
+			-works via dynamic dispatch
+	-L: (Barbara) Liskov Substitution Principle
+		-When kid wears a "mom hat," it must behave like mom
+		-To avoid ugly old-code bugs	
+	-I: Interface Segregation Principle (aka API)
+		-If you use tiny subset of a Class's set of methods, 
+                 build a middleman class to give you just that subset & it calls the Big Class
+		-Only the middleman needs recompiled when Big Class changes
+	 ______            ___________________
+        |Client|---------||Interface MiddleMan|
+	|______|	  |___________________|
+			  	    ↑
+				    |
+				 ___|_____           ___
+				|MiddleMan|-------->|Lib|
+                                |_________|         |___|
+	-D: Dependency Inversion
+		-"Cutout" Patterm
+         _______   ALT↓     ___________________
+        |Client |----(o----|Interface- IHelper | <NO slots, no MD bodies
+	|IHREF[]|--------->|___________________|
+	|_______|		    ↑
+	  └>(CLI #42 [])	    |
+		| ^mom-hatted	 ___|_____          
+		|		|Helper_A |
+                |----->(HA #25)>|_________|      
+		-If Helper_A changes, client doesn't recompile
+		-***CLI doesn't know guts of Helper _A
+	-D_2: Dependency Injection   
+
+         __________________
+	|    CLI_MGR       |
+        |__________________|
+           ||
+           ||
+	   ↓↓       Point: CLI doesn't know Helper_A guts
+    	 __||_______↓           ___________________
+        |Client     |          |     IHelper       | 
+	|Inject_IH()|--------->|___________________|
+	|___________|		     ↑
+	  └>(CLI #61 [])	     |
+		     ↑|       	  ___|_____          
+		IHREF╛|		 |Helper_A |
+                      └>(HA #51)>|_________|   
+
+
+LAB: CRC Dynamic Sim
+
+Recall UC Main Scen: [UC came from UScenario]
+
+Main-Scen: [1st cut] [In User Language, so we can Uncover Misunderstandings]
+  #1 Get source & target  [UI]
+  #2 Start new mainfest file with cmd-line & timestamp
+  #3 Traverse source hierarchy of folders:
+    for each file: {
+	  #4 Create file's Unique-ID
+	  #5 Add file line to manifest
+	  #6 Copy file into repo w/ Unique ID filename
+    }
+
+***User foesn't need to know the UC format/layout. just the pieces (6+ items) 
+   [7th item, 1st Extended Scen; Main Scen is no-frills Scen]***
+
+***No-frills ==> Easier to see what the core functionality should be***
+
+(*)**Keep Arch/Design very flexible until you've gotten the CRC Dynamic Sim feeling correct.**(*)
+
+CRC Static Arch Layout:
+	-CRC Cards on whiteboard withmarker lines connecting collaborators
+	-Look for:
+	  o- SRP (1 verb)***
+	  o- What shoulf the Agent (with its Data) let the world do? (provide what help)***
+	  o- What Helpers would be handy to help Agent do stuff?***
+	  o- Bad naming
+	  o- Awkward names (right Card?)
+	  o- User Domain Lang
+	  o- High Cohesion: Tightly related data on a single card -- means a 1- or 2-word description is likely
+	  o- Low Coupling: (issue) 
+		o-- Few links between cards (Best flow: assembly line)
+		o-- Little data on a link (So you can't pass massive collection of "state" args)
+		   ***Encapsulate many args into one arg object, IF they're RELATED (& maybe a candidate for its own CRC card)
+
+CRC Dynamic Sim:
+  ***Try to "run" UC Main Scen
+	o- Every responsibility md/msg MUST be between 2 different poeple (2 diff cards)**
+	   (Avoid: 1 person can fool self)
+	o- Hand out Cards to the poeple you've got (mulitple cards per person if needed)
+	o- Try to avoid details, stay high level. Details can bog you down in getting the big picture approx correct
+	Start:
+	  #1 Get source & target  [UI]
+	    o- put up web page
+	    o- wait for command
+	Who actually "gets" the cmd? New card?
+	  #2 Start new mainfest file with cmd-line & timestamp
+	    
+Previous Lecture (10/6)
+
+~Went over exam 1 solutions~
+________________________________
+
+Project Success/Failure
+
+-Plan, Track, Find "Breakage", and Adjust the project -- to hit the Project Triangle Estimates
+
+-The Problem with Projects -- Exposed
+
+-***Capers Jones -- 2004 Study
+	> 250  large SW projects from 1998-2004
+		o- 10% = 25 within plan; "successful" (aka original Esitmate: Time, Budget, Features)
+		o- 20% = withing 35% overrun of the plan; "barely successful" (aka overran by up to one-third)
+			o-- Projects needed extra time and/or money to finish and deliver
+			o-- Hard to know if they "worked well" for users (i.e. Validation)
+		o- 70% = failed, or nearly (ala >35% overrun, but got massively more money, or they were cancelled)
+	--------> So 30% success or "modest" overrun
+-Bit more Subjective, but in line with Capers Jones reports
+-Standish Group's Chaos Report
+	>Avg findings: Won = 30% Poor = 50% Fail = 20%
+
+	Measure		1994	1996	1998	2000	2002	2004	2006	2009
+ 	______________________________________________________________________________  <- Standish Croup's Chaous Report
+	Successful	16%	27%	26%	28%	24%	29%	35%	32%	  (at a glance); www.projectsmart.co.uk
+	Challenged	53%	33%	46%	49%	51%	53%	46%	44%
+	Failed		31%	40%	28%	23%	15%	18%	19%	24%	
+	[from www.infoq.com/articles/standish-chaos-2015/]
+
+-Measure of success: (Old Success||plus New Extra Success criteria)
+-on Time, on Budget, on Target||on Goal, User Value, and User Satisfaction
+	-UPSHOT: Abg findings: Win = 30% Poor = 50% Fail = 20%
+				Modern Resolution For All Projects
+				2011	2012	2013	2014	2015
+		Successful	29%	27%	31%	28%	29%
+		Challenged	49%	56%	50%	55%	52%
+		Failed		22%	17%	19%	17%	19%
+
+Best Chance of a Successful Project: 
+	o0. Small Project Size = Low complexity(cplxty) 
+	o1. Use Mostly COTS
+	o2. "Modernize and existing system" -- aka Port to a new "foundation"
+
+		Chaos Resoultution By Project Size
+
+			Successful	Challenged	Failed
+	_______________________________________________________
+	Grand		   2%		   7%		  17%
+	Large		   6%		   17%		  24%
+	Medium		   9%		   26%		  31%
+	Moderate	   21%		   32%		  17%
+	Small		   62%		   16%		  11%
+	_______________________________________________________
+	Total		100		100		100
+	[The resolution of all software projects by size from FY2011-2015 within the new CHAOS database.]
+	-UPSHOT: #1: G-roq = 10%, 30%, 60%; S-row = 70%, 20%, 10%
+		 #2: Win S/G = 7x
+
+Size		Method		Successful	Challenged	Failed
+All Size	Agile		39		52		9
+Project		Waterfall	11		60		29
+	
+More from Chaos Rpt 2011-2015
+-Factors of Project Success (aka Things that seem to "Cause" Failure)
+	o- 10 items; First 5 items are 70% of "estimated responses"
+-15% Executive Support: [C-Level believes project success is valuable to Biz]
+	o- when an executive or group of exectuioves agrees to provide both financial and emotional backing.
+	   The executive(s) will encourage and assist in the successful completion of the project
+-15% Emotional Maturity: [Team vs group -- are they friendly/helpful toward each other]
+	o- collection of basic behaviors of how people work together. In any group, organization, or
+	   comapnay it is noth the sum of their skilles and the "weakest lnk that determine the level" of emotional maturity.
+	For mgrs: "managing expectations", consensus building,and collaboration
+-15% User Involvment: [Early User Feedback is essential to correct course]
+	o- users are involved on the project descision-m,aking and information-gathering process. This also includes user 
+	   feedback, requirements review, basic research, prototyping, and other consensus-building tools (eg incremental delivery)
+-15* Optimization
+-10% Skilled Staff: [competent (non-strong) staff]
+	o- understand both the business and the technology. Highly proficient in execution of the project req'ts and delivery of
+	   project.
+Also-rans - Not as important
+-See document on BB for remaining 5
+
+How Does Agile Help?
+	o- Fail earlier ==> less "sunk cost" (money spent & you can't get it back)
+	o- I missed it (see BB)
+
+People
+-Team Leaders
+	- Motivate = push or pull devrs to do assigned tasks
+		> Carrots, Sticks, and how polite, helpful, and warm mgrs are
+	- Organize = plan & control flow of tasks; ensure they get done; and
+		     adjust/recover if they don't (due to obstacles & lack of "competence")
+		> ID problem task/progress early & plan to adjust/recover it
+		o-- AIO: Adapt (to your obstacle/circumstances), Innovate (a recover plan), 
+			 Overcome (repeat A&I plan execution until successful)
+	- Innovate = leave room for devrs to feel creative
+		> "Empower" devrs - give them guidlines, but let them innovate within those lines
+		> But ensure quality
+	- Leadership = loosen reins except where pbms identified
+	- Beneficence/Be Generous: reward successful innovation
+	- Social (Help improve Moral): understand and try to adjust stress levels in devrs
+
+The Project
+-John Reel -- 1999 SW Proj Bad Signs
+	- "90-90 rule"
+		> 1st 90% of prj uses 90% of time
+		> Last 10% uses another 90% of time ==> massive 80% overun
+			o-- Because: bad run-time bugs are typically due to Integrating mis-matched components
+		> Clean, easy to understand Arch:
+			o-- High Cohesion -- data & methods within Box are highly related
+			o-- Low Coupling -- data & calls between Boxes are very simple
+
+Estimation for SW Projects
+-McConnell 2006: 
+	> Software Estimation: Demystifying the Black Art, Steve McConnell 2006
+	> (Microsoft major mgr: one of the "Two Steves" along with Steve Macquire, author of Code Complete)
+-Estimate vs Target-plus-Commitment (to complete the task as if you life depended on it)
+	> "When executives ask for an "estimate," they're often asking for a commitment to complete a project(or task), or for
+	   a plan to meet a target."
+-Target: Biz objective; may not be achievable
+	>***Objective has Hard and Soft parts (Hard is stuff that cannot be changed)
+	> Hard is usually timeframe, and often resources/staff
+	> Soft is often features and/or quality, because these are fuzzier
+-Commitment: Promis to achieve a Biz Target
+	> Deliver defined (Targeted) finctionality
+	> at a specific level of (Targeted) quality
+	> by a certain date
+	> with given rexources
+-Estimate: predicted achievable timeframe and resources for Target
+-Error Bars: Every Estimate needs these (which themselves are a guess)
+	> "I think it'll take 3 weeks, with only 20% chance that it might take longer"
+-Key point of Estimation
+	>***Biz depends on predictability
+	> Buy product because: It does X, costs Y, devilered in 2 weeks COD.
+		
+Previous Lecture (10/13)
+
+GoF Designs
+_________________________
+
+"No Silver Bullet: Essence and Accidents of Software Engineering"
+Fredrick P. Brooks 1986
+
+1) Introduction
+
+2) Does It Have To Be Hard? Essential Difficulties
+	-Aristotle view of difficulties
+		>2 kinds: Essence & Accident
+	-Essence = intrinsic to S/W (innate, essence)
+		>What are S/W pgm's necessary parts?
+		>Conceptual Parts:
+			-Declarative Parts (no timing)
+				>data sets
+				>relationships among data items -- invarients (eg age & current date go together)
+			-Procedural Parts (steps, sequencing, timing)
+				>algorithms (adequate) //process steps
+				>functions (sub-algo modularity + API) & calls to em
+				NOT Referring To: any specific respresentations/lang/implementations
+	-Keys for S/W Conceptual Construct:
+		>Spec/Req'ts (What user needs, not about S/W internals)
+			-Req'ts = Requirements
+		>Design (Arch -- parts to deliver the needs)
+		>Testing/Prototype (does the Arch deliver user needs? Validate, not verify)
+		NOT: build/test specific implementation -- not even a no-frills impl
+	-Keys, Irreducible Essence
+		>2.1 Complexity -- scales exponential; comprehension overwhelmed 
+			-data sub-sets (objects) can influence each other 
+			-It's why Low Coupling/Thin Links used to reduce it
+		>2.2 Conformity -- Conform to Weird Outside Stuff
+			-Big pgms always must conform to environment/interfaces to other systems
+				>Use of Gof patterns: Proxy, Facade, Mediator, Adapter, Strategy
+			-Esp Expected user data/processing needs
+		>2.3 Changability
+			-First Understanding (of the pbm) is Never Correct; (hence Agile)
+			-Once program is in user hands:
+				>devrs find mis-understandings
+				>users realizes poor reqts
+				>isers imagine new better reqts
+			-Always Biz pressure to change:
+				>For Mktg/Compete, Mktg/Sales, PR, Tech, Laws
+					-Mktg = Marketing
+				>Hance, shorter dev-to-ship ==> faster recovery from changes
+		>2.4 Invisibility/Emergence -- (The Inability to See the Complexity All at Once)
+			-S/W = Construct of Interlocking Concepts
+			-Visualization invaluable: Blueprints, Maps, Tour Guides, Trees, Graphs, UML
+				>Easier to see pbms/bugs/omissions (from that visual viewpoint)
+			-S/W is too complex to capture in such simple formats
+
+			"As soon as we attempts to diagram software structure, we find it to 
+			 Constitute not one, but several. general directed graphs,
+			 superimposed one upn another. The several graphs may represent
+			 the flow of control, the flow of data, patterns of dependency,
+			 TIME SEQUENCE, name-space realationships.
+			 Theses are usually not even planar, much less hierarchical."
+
+			-***Traditional Sol'n: Abstract/Model
+				>Simplify a view by ignoring parts
+				>**Can't find bugs involving parts that are ignored
+			-***Remains inherently un-visualizable
+3) Break-thrus on Accident Difficulties
+	-3.1 High Level Languages
+		>Better abstractions for essence, plus adds new accidental stuff
+	-3.2 Time-Sharing -- 1 (virtual) computer per devr
+		>Shorter feedback loop on all pgm bugs
+	-3.3 Unified Programming Environments (IDEs) 
+		>Auto-help finding  & ID very simple details
+4)Hopes for the Silver (basedon existing tech + some improvements)
+	-4.1 High-Level Language (HLL -nox) Advances
+		>Con: Over-rich feature set, hard to learn
+		>Pro: Programming in a working subset if it helps
+		>Con: Just another HLL; up from Asm bugs to Stmt-Step bugs
+	-4.2 OOP & other Technical Fads
+		>2 Idea Kinds:
+			-ADTs (op algebra rules; self-contained) -- helps avoid usage bugs
+			-Class hier -- avoids compy-paste bugs; but needs SOLID/D!
+	-4.3 AI
+		>AI-1: Human problem solving tech: ML, GA, ANN
+			-AI has a Slippery def
+			-Not close to Human-level, weak & pbm-specific & buggy
+				>NB, ANN-Deep-Learning latest useful fad
+		>AI-2: Expert Systems (see sec 4.4)
+	-4.4 Expert Systems
+		>Pick SME brains for Domain rules & impl RBS
+		>Used extensively in simple domains (eg, loan qualifying)
+		>Scale up reqs Big Knowledge techy, failed for 30 yrs
+		>Best Help: prompt & double-check on newbies (new trainees)
+			-Not in general use for this yet
+	-4.5 "Automatic" Programming (AP) (aka Formal Mds)
+		>Idea: Write spec, push button, out plops pgm verified -- (type I, m->p)
+			-Pbm, how is spec lang diff from HLL? No diff, just "higher" maybe
+			***Parnas: view of "AP" Glamorous, not meaningful
+				>Doesn't spec pbm, but the pgm!; Not the Neww/What but the Mech/How
+			Exceptions that Work (using AP): Pbm has
+				>Few knobs
+				>Many known sol'n mechs
+				>Exist std rules for sol'n
+	-4.6 Graphical Pgmg
+		>Idea: Write visual diagram(s), push button, out plops pgm verified
+		>VB framework provides std GUI wrapper code
+			-VB = Visual Basic
+		>UML tools provides std general wrapper code, but harder
+		CON:
+			-Screens still too small!! (to see all of the complex needed)
+			-Needs far too many diagrams w/ linkages that are too complex
+	-4.7 Pgm Verif (aka Formal Mds) (type !!, m<-p/model)
+		>Veif Design/Model before detailed design/code/test
+		>Prover only says model verified; doesn't prove spec correct (aka validate)
+		>Prover can have bugs
+		>pgm still needs built
+	-4.8 Environments and Tools; (eg ~Unified Process, UML, IDEs)
+		>Easiest stuff already done
+	-4.9 Workstations (aka Desktop 'personal' computers)
+		>Now, 35 years, have laptops & 2-,3-head screens, but no improvements
+5) Promising Attacks on the Conceptual Essences (Brooks' opinion)
+	-***Want Methodology/Tech to speedup Essence
+	A. Bottleneck: define & linkip arch components & data sets
+	"the formulation of these complex comveptual structures" pg 18
+	[CS: Left out
+		-2nd Bottleneck: Resolve RT bugs in complex impl, found in I&T phase
+		-3rd Bottleneck: Resolve spec bugs, found in Validations phase
+		-4th Bottleneck: Avoid bugs from gold plating (unneeded code)
+			>Spec & Arch gold plating]
+	B. Faster ecpressing/coding arch components doesn't speedup overall
+	-5.1 Buy versus Build (COTS)
+		>$100K tool == 1 FTE/yr, strong-ish pgmr (FTE = Full-time Employee)
+		PRO: If you can use them (eg framework) maybe save 80% of you coding
+		>Most applications of COTS too specialized for medium to big pgms
+		>Upshot, doesn't help enough
+			-caveat: Frameworks are a good start -- fit into their arch
+	-5.2 Reqts Refinement and Rapid Prototyping
+		"The hardest single part og building a software system is deciding
+		 precisely what to build." (Spec(& maybe part of the Arch))
+		>Spec is most imp (obviously)
+		"Therefore the most important function that the software builder does for his client
+		 is the iterative extraction and refinement of the product requirements."
+		>Get spec wrong, validation fails, project fails
+		"impossible for a client.. to specify... the exact requirements...
+		 before having built and tried some versions of the product he is specifying."
+		>The users have to play with it to know if they got the reqts done right 
+		>w/o iterating, project fails
+		***Key: rapid prototyping/delivery to get spec right
+		Prototype: (4 Things)
+			-Does main fcns
+			-Shoes important UI
+			-No Frills 
+			-Performance not req'd
+			***Purpose: validate spec -- users like it, so the spec must be right
+				>for consistency and usability
+		>Std S/W Proj (Big BAng stlye, aka BUFD [Bug Up-Front Design])
+			o1. Specify in advance (by Custm eg via RFP)
+			o2. Get bids to build 
+			o3. S/W 
+		-he went too fast check, see BB-
+	-5.4 Great Designers
+		"Whereas the difference between poor conceptual designs and good
+		 ones may lie in the soundness of design method,
+		 the difference between good designs and great ones surely does not.
+		 Great desugns come from great designers. Software construction is a creative process."
+		>Sound design method gives you good or great designs dep in the designer
+		"Study after study... [see BB for full quote]
+		>Develop ways to grow great designers
+		[CS: HOw? Learn as many arch styles & algos as you can.
+		 Keep learning: SOA & P2P & uSvcs arose after Brooks' paper]
+
+Q:What HAS been a Silver Bullet? (at least somewhat)
+	-Agile's extreme user feedback loop:
+		>2-8 wk sprints/deliveries
+		>Reset Feature list from scratch for each sprint -- per User feddback
+		>And NO OTHER Agile features bear directly like these 2
+	-How Helps?
+		>Avoids multi-year massive failure
+		>Allows plug pulled early, by cust -- saving future wasted cost
+	-How Addresses Essence? (Essence need the Arch to be Validated)
+		>Adresses the Keys: Quickly debugs Spec, incrementally
+			-Spec (What user needs, not about S/W internals)
+			-Design (Arch/Model -- parts to deliver the needs)
+			-Testing (Does the Arch deliver? Validation)
+	-Drawbacks:
+		>Still reqs building a working version; to the "Metal"
+		>Still assumes can get to final arch via baby-steps
+		>Requires very modular arch to keep complexity low
+	-CRC Paper-&-People Sim
+		>Lets both dev team and users see if the Arch makes sense
+		>finds bugs & holes in the Arch before the Build phase
+
+Previous Lecture (10/6)
+
+~Went over exam 1 solutions~
+________________________________
+
+Project Success/Failure
+
+-Plan, Track, Find "Breakage", and Adjust the project -- to hit the Project Triangle Estimates
+
+-The Problem with Projects -- Exposed
+
+-***Capers Jones -- 2004 Study
+	> 250  large SW projects from 1998-2004
+		o- 10% = 25 within plan; "successful" (aka original Esitmate: Time, Budget, Features)
+		o- 20% = withing 35% overrun of the plan; "barely successful" (aka overran by up to one-third)
+			o-- Projects needed extra time and/or money to finish and deliver
+			o-- Hard to know if they "worked well" for users (i.e. Validation)
+		o- 70% = failed, or nearly (ala >35% overrun, but got massively more money, or they were cancelled)
+	--------> So 30% success or "modest" overrun
+-Bit more Subjective, but in line with Capers Jones reports
+-Standish Group's Chaos Report
+	>Avg findings: Won = 30% Poor = 50% Fail = 20%
+
+	Measure		1994	1996	1998	2000	2002	2004	2006	2009
+ 	______________________________________________________________________________  <- Standish Croup's Chaous Report
+	Successful	16%	27%	26%	28%	24%	29%	35%	32%	  (at a glance); www.projectsmart.co.uk
+	Challenged	53%	33%	46%	49%	51%	53%	46%	44%
+	Failed		31%	40%	28%	23%	15%	18%	19%	24%	
+	[from www.infoq.com/articles/standish-chaos-2015/]
+
+-Measure of success: (Old Success||plus New Extra Success criteria)
+-on Time, on Budget, on Target||on Goal, User Value, and User Satisfaction
+	-UPSHOT: Abg findings: Win = 30% Poor = 50% Fail = 20%
+				Modern Resolution For All Projects
+				2011	2012	2013	2014	2015
+		Successful	29%	27%	31%	28%	29%
+		Challenged	49%	56%	50%	55%	52%
+		Failed		22%	17%	19%	17%	19%
+
+Best Chance of a Successful Project: 
+	o0. Small Project Size = Low complexity(cplxty) 
+	o1. Use Mostly COTS
+	o2. "Modernize and existing system" -- aka Port to a new "foundation"
+
+		Chaos Resoultution By Project Size
+
+			Successful	Challenged	Failed
+	_______________________________________________________
+	Grand		   2%		   7%		  17%
+	Large		   6%		   17%		  24%
+	Medium		   9%		   26%		  31%
+	Moderate	   21%		   32%		  17%
+	Small		   62%		   16%		  11%
+	_______________________________________________________
+	Total		100		100		100
+	[The resolution of all software projects by size from FY2011-2015 within the new CHAOS database.]
+	-UPSHOT: #1: G-roq = 10%, 30%, 60%; S-row = 70%, 20%, 10%
+		 #2: Win S/G = 7x
+
+Size		Method		Successful	Challenged	Failed
+All Size	Agile		39		52		9
+Project		Waterfall	11		60		29
+	
+More from Chaos Rpt 2011-2015
+-Factors of Project Success (aka Things that seem to "Cause" Failure)
+	o- 10 items; First 5 items are 70% of "estimated responses"
+-15% Executive Support: [C-Level believes project success is valuable to Biz]
+	o- when an executive or group of exectuioves agrees to provide both financial and emotional backing.
+	   The executive(s) will encourage and assist in the successful completion of the project
+-15% Emotional Maturity: [Team vs group -- are they friendly/helpful toward each other]
+	o- collection of basic behaviors of how people work together. In any group, organization, or
+	   comapnay it is noth the sum of their skilles and the "weakest lnk that determine the level" of emotional maturity.
+	For mgrs: "managing expectations", consensus building,and collaboration
+-15% User Involvment: [Early User Feedback is essential to correct course]
+	o- users are involved on the project descision-m,aking and information-gathering process. This also includes user 
+	   feedback, requirements review, basic research, prototyping, and other consensus-building tools (eg incremental delivery)
+-15* Optimization
+-10% Skilled Staff: [competent (non-strong) staff]
+	o- understand both the business and the technology. Highly proficient in execution of the project req'ts and delivery of
+	   project.
+Also-rans - Not as important
+-See document on BB for remaining 5
+
+How Does Agile Help?
+	o- Fail earlier ==> less "sunk cost" (money spent & you can't get it back)
+	o- I missed it (see BB)
+
+People
+-Team Leaders
+	- Motivate = push or pull devrs to do assigned tasks
+		> Carrots, Sticks, and how polite, helpful, and warm mgrs are
+	- Organize = plan & control flow of tasks; ensure they get done; and
+		     adjust/recover if they don't (due to obstacles & lack of "competence")
+		> ID problem task/progress early & plan to adjust/recover it
+		o-- AIO: Adapt (to your obstacle/circumstances), Innovate (a recover plan), 
+			 Overcome (repeat A&I plan execution until successful)
+	- Innovate = leave room for devrs to feel creative
+		> "Empower" devrs - give them guidlines, but let them innovate within those lines
+		> But ensure quality
+	- Leadership = loosen reins except where pbms identified
+	- Beneficence/Be Generous: reward successful innovation
+	- Social (Help improve Moral): understand and try to adjust stress levels in devrs
+
+The Project
+-John Reel -- 1999 SW Proj Bad Signs
+	- "90-90 rule"
+		> 1st 90% of prj uses 90% of time
+		> Last 10% uses another 90% of time ==> massive 80% overun
+			o-- Because: bad run-time bugs are typically due to Integrating mis-matched components
+		> Clean, easy to understand Arch:
+			o-- High Cohesion -- data & methods within Box are highly related
+			o-- Low Coupling -- data & calls between Boxes are very simple
+
+Estimation for SW Projects
+-McConnell 2006: 
+	> Software Estimation: Demystifying the Black Art, Steve McConnell 2006
+	> (Microsoft major mgr: one of the "Two Steves" along with Steve Macquire, author of Code Complete)
+-Estimate vs Target-plus-Commitment (to complete the task as if you life depended on it)
+	> "When executives ask for an "estimate," they're often asking for a commitment to complete a project(or task), or for
+	   a plan to meet a target."
+-Target: Biz objective; may not be achievable
+	>***Objective has Hard and Soft parts (Hard is stuff that cannot be changed)
+	> Hard is usually timeframe, and often resources/staff
+	> Soft is often features and/or quality, because these are fuzzier
+-Commitment: Promis to achieve a Biz Target
+	> Deliver defined (Targeted) finctionality
+	> at a specific level of (Targeted) quality
+	> by a certain date
+	> with given rexources
+-Estimate: predicted achievable timeframe and resources for Target
+-Error Bars: Every Estimate needs these (which themselves are a guess)
+	> "I think it'll take 3 weeks, with only 20% chance that it might take longer"
+-Key point of Estimation
+	>***Biz depends on predictability
+	> Buy product because: It does X, costs Y, devilered in 2 weeks COD.
+		
+Previous Lecture (10/8)
+
+Project Success/Failure
+_____________________________
+
+Structural Pattern
+
+-Basic Cutout Pattern -- Separate Client fromHelper
+	-So that Helper can Change without requiring the Client to be recompiled
+		>***As long as part of the Helper API that the Client uses Doesn't Change
+	-Can change Concrete Helper source code w/o Client recompilation
+		>No Retesting if same I/O behavior (BUT REGRESSION_TEST ALWAYS)
+	-***Client needs handle on Concrete Jelper object (via the IHRef slot) to make the call
+		>Mom-Hat (CF Liskov Subst P)
+		>IHRef (Ref/Ptr) gets the aht (aka upcast to mom ref) in Basic Cutout run-time objects
+	-***You could change at Run-Time (aka Dynamically) the actual (mom-hatted) Helper Ref in the Client
+-NB, you could (and maybe shouyld) also give the Client an Interface class to inherit from, too (Some GoF patterns do this)
+
+ __________			 _________________
+|Caller    |------------------->|Interface        |
+|__________|			| doit() <no body>|
+     ^		         	|_________________|
+     |					^
+     |					|
+Key: Separate			 _______|_________
+Recompilations	------------->  | Concrete Methods|
+				| doit() {...}    |
+				|_________________|
+
+
+***CLI Recompliled on HLPR Mod!!		Basic Cutout (DEP Inversion)
+
+ _______  	 _______			 _______	 _______
+|Client | 	|Helper |			|Client |	|IHelper|  The 'D' in
+|HRef[] |---o)--|DoIt(-)|	==>		|IHRef[]|---o)--|DoIt(-)|    soliD/d     <------┐
+|_______|       |_______|			|_______|	|_______|			|
+    |		    |		    		   |		    |				|
+   CTOR		   CTOR		  		 CTOR		    |				|
+    |		    |		   		   | 		    ^				|	
+(CLI #4)------->(HLP #2)	==>		(CLI #4 )	____|________			|
+(HRef[])					(IHRef[])      |Helper	     |			|
+				   		  |   ^	       | DoIt(-){...}|			|
+				    		  |   Mom-     |_____________|			|
+				    		  |  Hatted	   |				|
+				    		  |   Ref	 CTOR				|
+				    		  |		   |				|
+				    		  └---------->(HLP #2)				|
+						Q: Inserted By Whom? ==>***Need DEP Injection!! ╛
+
+Structural Pattern
+
+-Adapter -- Translate New-API-Help to Old-API-Help
+	-Adapter: Client wants easier API to Old Gelper (Adaptee)
+		>**Old Helper can't be changes (eg no source code available)
+	-New Helper (API Adapter) provides new API
+	-Client calls New Helper(Adapter) with new easy API who then calls the Old Helper (Adaptee)
+	-Basic Cutout isolates Client from changes in New Helper
+	-(NB, you oculd also give the Client an Interface)
+
+ ______________		 ______________
+|Adapter Client|	|Target        |
+|______________|------->|request():void|
+			|______________|
+				|
+				^
+				|
+			 _______|______		     ______________________
+			|Adapter       |--adaptee-->| Adaptee              |
+			|request():void|	    |specificRequest():void|
+			|______________|	    |______________________|
+
+-GoF Bridge -- Separate varying related Clients form varying related Helper
+	-so both Helpers *aka Implementations) AND Clients (aka Abstractions) can Change without affecting each other
+	EX: Clients are Different Window Concepts(eg, Graphics, Dialog, Droplist) AND Helpers are Different OS Windowing-Systems
+	-Can change Concrete Helper w/0 recompiling Concrete Callers and vice versa
+	-Cutout + Client-side Interface class & (maybe) multiple concrete client and helper classes
+
+	 ___________		  _______________
+        |Abstraction| <>-------->|Implementor    |
+	|operation()|		 |operationImpl()|
+	|___________|		 |_______________|
+	      ^				^	^
+	      |				|	|
+	      |		 _______________|_____  |
+	      |		|Concrete ImplementorA| |
+    __________|______	|operationImpl()      | |
+   |RefineAbstraction|  |_____________________| |
+   |_________________|                          |
+                                        ________|___________
+                                       |ConcreteImplementorB|	
+				       |operationImpl()     |
+				       |____________________|
+
+-Mediator -- Separates group of "Colleagues" Helpers so they can vary w/o impacting each other
+	-Note: the Colleagues will inherit (per GoF) from a simple Interface so they can be easily controlled uniformly
+		>However, those Colleagues could be wildly different - it's just that the Mediator needs to uinderstand each one's API
+	-Like a CRC Controller Class Kind
+	-related to "Micro-Services" (part of SOA arch stlye)
+	EX: converts multiple steps in an assembly line to indep uSvcs (no shared state)
+	-Each gets called by, and returns its results to, the Mediator
+
+	 __________			 __________
+	|IMediator |------------------->|IColleague|
+	|__________|		mediator|__________|
+	   ^				   ^     ^
+           |				   |	 |
+	   |				   |	 |
+	 __|_____________     _____________|____ |
+	|ConcreteMediator|-->|ConcreteColleague1||
+        |                |   |__________________||
+        |                |                _______|__________
+        |________________|-------------->|ConcreteColleague2|
+				         |__________________|
+
+-Facade -- Client wants simple One-Stop API to multiple Helpers (aka Adaptees_
+	-Caller calls Facade obj
+	-Facade (aka Mask, Wrapper): new obj provides simple API to complex obj or mupltiple API obj
+	CF Interface Segregation on SOLID/D
+
+	[Diagram Next Time]
+Previous Lecture (10/13)
+
+GoF Designs
+_________________________
+
+"No Silver Bullet: Essence and Accidents of Software Engineering"
+Fredrick P. Brooks 1986
+
+1) Introduction
+
+2) Does It Have To Be Hard? Essential Difficulties
+	-Aristotle view of difficulties
+		>2 kinds: Essence & Accident
+	-Essence = intrinsic to S/W (innate, essence)
+		>What are S/W pgm's necessary parts?
+		>Conceptual Parts:
+			-Declarative Parts (no timing)
+				>data sets
+				>relationships among data items -- invarients (eg age & current date go together)
+			-Procedural Parts (steps, sequencing, timing)
+				>algorithms (adequate) //process steps
+				>functions (sub-algo modularity + API) & calls to em
+				NOT Referring To: any specific respresentations/lang/implementations
+	-Keys for S/W Conceptual Construct:
+		>Spec/Req'ts (What user needs, not about S/W internals)
+			-Req'ts = Requirements
+		>Design (Arch -- parts to deliver the needs)
+		>Testing/Prototype (does the Arch deliver user needs? Validate, not verify)
+		NOT: build/test specific implementation -- not even a no-frills impl
+	-Keys, Irreducible Essence
+		>2.1 Complexity -- scales exponential; comprehension overwhelmed 
+			-data sub-sets (objects) can influence each other 
+			-It's why Low Coupling/Thin Links used to reduce it
+		>2.2 Conformity -- Conform to Weird Outside Stuff
+			-Big pgms always must conform to environment/interfaces to other systems
+				>Use of Gof patterns: Proxy, Facade, Mediator, Adapter, Strategy
+			-Esp Expected user data/processing needs
+		>2.3 Changability
+			-First Understanding (of the pbm) is Never Correct; (hence Agile)
+			-Once program is in user hands:
+				>devrs find mis-understandings
+				>users realizes poor reqts
+				>isers imagine new better reqts
+			-Always Biz pressure to change:
+				>For Mktg/Compete, Mktg/Sales, PR, Tech, Laws
+					-Mktg = Marketing
+				>Hance, shorter dev-to-ship ==> faster recovery from changes
+		>2.4 Invisibility/Emergence -- (The Inability to See the Complexity All at Once)
+			-S/W = Construct of Interlocking Concepts
+			-Visualization invaluable: Blueprints, Maps, Tour Guides, Trees, Graphs, UML
+				>Easier to see pbms/bugs/omissions (from that visual viewpoint)
+			-S/W is too complex to capture in such simple formats
+
+			"As soon as we attempts to diagram software structure, we find it to 
+			 Constitute not one, but several. general directed graphs,
+			 superimposed one upn another. The several graphs may represent
+			 the flow of control, the flow of data, patterns of dependency,
+			 TIME SEQUENCE, name-space realationships.
+			 Theses are usually not even planar, much less hierarchical."
+
+			-***Traditional Sol'n: Abstract/Model
+				>Simplify a view by ignoring parts
+				>**Can't find bugs involving parts that are ignored
+			-***Remains inherently un-visualizable
+3) Break-thrus on Accident Difficulties
+	-3.1 High Level Languages
+		>Better abstractions for essence, plus adds new accidental stuff
+	-3.2 Time-Sharing -- 1 (virtual) computer per devr
+		>Shorter feedback loop on all pgm bugs
+	-3.3 Unified Programming Environments (IDEs) 
+		>Auto-help finding  & ID very simple details
+4)Hopes for the Silver (basedon existing tech + some improvements)
+	-4.1 High-Level Language (HLL -nox) Advances
+		>Con: Over-rich feature set, hard to learn
+		>Pro: Programming in a working subset if it helps
+		>Con: Just another HLL; up from Asm bugs to Stmt-Step bugs
+	-4.2 OOP & other Technical Fads
+		>2 Idea Kinds:
+			-ADTs (op algebra rules; self-contained) -- helps avoid usage bugs
+			-Class hier -- avoids compy-paste bugs; but needs SOLID/D!
+	-4.3 AI
+		>AI-1: Human problem solving tech: ML, GA, ANN
+			-AI has a Slippery def
+			-Not close to Human-level, weak & pbm-specific & buggy
+				>NB, ANN-Deep-Learning latest useful fad
+		>AI-2: Expert Systems (see sec 4.4)
+	-4.4 Expert Systems
+		>Pick SME brains for Domain rules & impl RBS
+		>Used extensively in simple domains (eg, loan qualifying)
+		>Scale up reqs Big Knowledge techy, failed for 30 yrs
+		>Best Help: prompt & double-check on newbies (new trainees)
+			-Not in general use for this yet
+	-4.5 "Automatic" Programming (AP) (aka Formal Mds)
+		>Idea: Write spec, push button, out plops pgm verified -- (type I, m->p)
+			-Pbm, how is spec lang diff from HLL? No diff, just "higher" maybe
+			***Parnas: view of "AP" Glamorous, not meaningful
+				>Doesn't spec pbm, but the pgm!; Not the Neww/What but the Mech/How
+			Exceptions that Work (using AP): Pbm has
+				>Few knobs
+				>Many known sol'n mechs
+				>Exist std rules for sol'n
+	-4.6 Graphical Pgmg
+		>Idea: Write visual diagram(s), push button, out plops pgm verified
+		>VB framework provides std GUI wrapper code
+			-VB = Visual Basic
+		>UML tools provides std general wrapper code, but harder
+		CON:
+			-Screens still too small!! (to see all of the complex needed)
+			-Needs far too many diagrams w/ linkages that are too complex
+	-4.7 Pgm Verif (aka Formal Mds) (type !!, m<-p/model)
+		>Veif Design/Model before detailed design/code/test
+		>Prover only says model verified; doesn't prove spec correct (aka validate)
+		>Prover can have bugs
+		>pgm still needs built
+	-4.8 Environments and Tools; (eg ~Unified Process, UML, IDEs)
+		>Easiest stuff already done
+	-4.9 Workstations (aka Desktop 'personal' computers)
+		>Now, 35 years, have laptops & 2-,3-head screens, but no improvements
+5) Promising Attacks on the Conceptual Essences (Brooks' opinion)
+	-***Want Methodology/Tech to speedup Essence
+	A. Bottleneck: define & linkip arch components & data sets
+	"the formulation of these complex comveptual structures" pg 18
+	[CS: Left out
+		-2nd Bottleneck: Resolve RT bugs in complex impl, found in I&T phase
+		-3rd Bottleneck: Resolve spec bugs, found in Validations phase
+		-4th Bottleneck: Avoid bugs from gold plating (unneeded code)
+			>Spec & Arch gold plating]
+	B. Faster ecpressing/coding arch components doesn't speedup overall
+	-5.1 Buy versus Build (COTS)
+		>$100K tool == 1 FTE/yr, strong-ish pgmr (FTE = Full-time Employee)
+		PRO: If you can use them (eg framework) maybe save 80% of you coding
+		>Most applications of COTS too specialized for medium to big pgms
+		>Upshot, doesn't help enough
+			-caveat: Frameworks are a good start -- fit into their arch
+	-5.2 Reqts Refinement and Rapid Prototyping
+		"The hardest single part og building a software system is deciding
+		 precisely what to build." (Spec(& maybe part of the Arch))
+		>Spec is most imp (obviously)
+		"Therefore the most important function that the software builder does for his client
+		 is the iterative extraction and refinement of the product requirements."
+		>Get spec wrong, validation fails, project fails
+		"impossible for a client.. to specify... the exact requirements...
+		 before having built and tried some versions of the product he is specifying."
+		>The users have to play with it to know if they got the reqts done right 
+		>w/o iterating, project fails
+		***Key: rapid prototyping/delivery to get spec right
+		Prototype: (4 Things)
+			-Does main fcns
+			-Shoes important UI
+			-No Frills 
+			-Performance not req'd
+			***Purpose: validate spec -- users like it, so the spec must be right
+				>for consistency and usability
+		>Std S/W Proj (Big BAng stlye, aka BUFD [Bug Up-Front Design])
+			o1. Specify in advance (by Custm eg via RFP)
+			o2. Get bids to build 
+			o3. S/W 
+		-he went too fast check, see BB-
+	-5.4 Great Designers
+		"Whereas the difference between poor conceptual designs and good
+		 ones may lie in the soundness of design method,
+		 the difference between good designs and great ones surely does not.
+		 Great desugns come from great designers. Software construction is a creative process."
+		>Sound design method gives you good or great designs dep in the designer
+		"Study after study... [see BB for full quote]
+		>Develop ways to grow great designers
+		[CS: HOw? Learn as many arch styles & algos as you can.
+		 Keep learning: SOA & P2P & uSvcs arose after Brooks' paper]
+
+Q:What HAS been a Silver Bullet? (at least somewhat)
+	-Agile's extreme user feedback loop:
+		>2-8 wk sprints/deliveries
+		>Reset Feature list from scratch for each sprint -- per User feddback
+		>And NO OTHER Agile features bear directly like these 2
+	-How Helps?
+		>Avoids multi-year massive failure
+		>Allows plug pulled early, by cust -- saving future wasted cost
+	-How Addresses Essence? (Essence need the Arch to be Validated)
+		>Adresses the Keys: Quickly debugs Spec, incrementally
+			-Spec (What user needs, not about S/W internals)
+			-Design (Arch/Model -- parts to deliver the needs)
+			-Testing (Does the Arch deliver? Validation)
+	-Drawbacks:
+		>Still reqs building a working version; to the "Metal"
+		>Still assumes can get to final arch via baby-steps
+		>Requires very modular arch to keep complexity low
+	-CRC Paper-&-People Sim
+		>Lets both dev team and users see if the Arch makes sense
+		>finds bugs & holes in the Arch before the Build phase
+Previous Lecture (10/15)
+
+"Silver Bullet"
+_________________________
+
+10.3.1 Arch Styles pg 187
+
+Data-Centered Arch
+-DB Major Data Parts (RDB - no Objects - SQL)
+	>RDB from "Relational Algebra", by Edgar Codd 1970 <-not on exam
+		-Tremendously simpler than prior DB kinds
+		-Took over by late 1970s
+		-Initial RDB "languages", mostly gone: Sequel, SQL, Postgres
+			>SQL Today(pronounced S.Q.L or "Sequel")
+	>many CRUD clients (Create, Read, Update, and Delete Data)
+	>RDB must be Reliable/Resilient
+	>RDB trypically Distributed - diff parts of data in diff cpu locations
+		-Issues: Consistency time delay, Atomic multi-part transactions (all parts win or all parts lose)
+	>Single-computer, multiple-disks - typically uses "RAID-5" tech
+		-Destory any one (of 5 disks) and no loss of data - similar to doing parity-based Error Correction
+Huge DB/Cloud
+	>Too much for single-CPU processing - only Distributed or Parallel or both
+-No SQL for Giant Dbs (but scales down, too)
+	>Key-Val DB(aka Map/Dictionary)
+		Ex: Redis, Memcached
+	>Document DB - Hierachial Structure Data: JSON, XML docs - large and small docs
+		Ex: MongoDB
+	>Grapg DB - directed-edge/arrow relationships ntween data-objects(no methods)
+		Ex: Neo4j
+-Issues:
+	>ACID: Atomicity, Consistency, Isolation, Durability
+		-Atomicity: all or nothing rule (part of xtn) - needed for multi-part transactions
+		-Consistency: only valid data in DB (w.r.t constraints) with diff data parts in diff CPU locations
+			>w.r.t = with respect to
+		-Isolation: seq of overlapping xtns can't interfere w/ each other - regardless of order of their sub-parts
+		-Durability: DB atomicity if crash during xtn - you can pull power plug & the DB is still safe
+	>Base: (Wordplay on "ACID" from Chemistry) <not on exam
+		-Basic Availabilty (aka local availability)
+		-Soft-state (aka inconsistent for newest changes)
+		-Eventual consistency (aka consistent for older changes)
+			>Badly chosen expressions (hard to remember)
+	>CAP "theorem": can't have Consistency, Availability, and Partition tolerance (in the cloud), you have to settle for 2 out of 3
+		-Eric Brewer < Not on exam
+		-Consistency: all processors see the same thing: How?
+			>By no Availability: (by delaying local access till remote change is here too)
+			>By no Partition: (by having no remote processors) - ie, no cloud - just local processing
+		-Availability: distant changes are available "immediately"
+			>By delaying local access till remote stuff is visible
+Data-Flow Arch
+-Raw data passes through network (aka Digraph) of transforms/filters: ex: UNIX "pipes and filters"
+
+Call/Return Arch: simplest: call fcn, & wait("blocking") to get its return value
+
+RPC Arch: (Remote Procedure Call (aka Call-Ret)) multiple 'nodes', each running async
+-***Blocking (wait for answer from remote machine)
+  (OR Non-Blocking - Set up a reciever function (aka Callback) to be called when the answer is ready - ie, Callback Arch)
+
+MVC: Model-View-Controller (Model does calc & maintains state - representation of the User's Pbm;
+   UI: Views & Controllers (tell model what to do) provide input & display manipulation & Model control)
+	-Model has fcn call API. Model tells each view about state updates (in pub-sub style). Ctlr calls API
+
+Publish-Subscribe Arch: (aka "pub-sub") Subscribers sign up for data updates with Publisher
+	-Subscribers wait to be informed about updates(ie, via Callbacks)
+
+Client-Server Arch: Server has agents to help handle bug DB, Client does all UI. (Cli & Svr have own CPUs)
+
+Callback Arch: Pass fcn to call when done, and continue with your stuff till answer comes
+	-aka Non-Blocking Call - relies on O.S. Interrupt handling
+	-ie, RPC with no waiting
+
+Polling Arch: Opposite of Callback: Caller keeps asking if anything is ready to use
+
+Event-Loop Arch: Simulation, RTOS (Realtime O.S.), Animation
+	-Constantly checking a "Task List" (or Priority Ques, or Event Queue) to see if anything needs to be done
+
+Agent Arch: (aka OO Arch) agents send msgs to each other (Agents == Objects)
+	-Blackboard Arch: Agents(subscribers) with a common DB (Blackboard publisher, which publishes updates)
+
+P2P Arch (Peer-to-Peer Network Arch) - very resilient, very simple (local connectivity information only)
+
+Network Archs - EG, TCP/IP and other complex multi-CPU/Node protocol-based stuff
+	-Old ex: Star network (central 'hub' control CPU)
+	-Token Ring Network (CPUs connected in a Ring & pass a token around - CPU with token can 'speak')
+	-Ethernet network: (CPUs on collision have a backoff (be quiet) 'schedule' delay before trying to speak again)
+
+Layered Arch: Lower Layer provide concepts/tools/fcns used by next higher level
+	-***Lower Layer never requests/calls a higher layer
+	-Main ex: TCP/IP: 4-layers App level down to Net Packet level
+
+Tiered Arch: (Side-to-Side) Cli-Svr is a 2-Tier arch; Cli-BizLogic-Svr(+DB) 3-Tier
+	-(A generalization of Cli-Svr Arch)
+	-typically each "tier" can reside in its own CPU
+
+Broker Arch: like pub-broker-sub - (pub is server)both sever(s) and subscribers sign up with broker
+	-servers and subs don't know each other
+	-only broker knows about both - broker is a "cutout" at arch level - broker is a "matchmaker"
+	-allows servers to sign-up to provide services
+	-subscribers request a service & broker mediates between the two (or directly hooks them up)
+	-ex: "Yellowpages" (like in a "phone book" - old style)
+	-ex: CORBA - which comes with its own "service/interface description language", an IDL<not on exam
+		>CORBA = Common Object Request Broker Architecture <not on exam
+	
+Previous Lecture (10/22)
+
+SW Quality Assurance
+___________________________
+
+More SQA
+
+80-20 Rule: "80% bugs come from 20% of code" (Not 90-90 Rule)
+	-Think of a Bell Curve of %  of Code quality - left-hand Tail has the most bugs, say about 20% of code
+6-Sigma == 6 std deviations, less than 2 in a billion (Gaussian, aka Bell Curve, Normal)
+	-Building extremely high quality stuff
+	-Originally from factory mfgr'ing
+	-Goal: Have a better than 6-sigma defect rate
+	EX of Sigma: 1-Sigma==685 of central Bell curve (34% on either side)
+		     2-Sigma (std Science test) is 97% of Bell curve (97% = 1.96 Sigma)
+	-Sigma is a measurement of normalized std deviation
+DMAIC == Define, Measure, Analyse - (then) Improve, Ctrl == DMA/IC
+	-Can't know what to measure unless you define success (like Rule #EIO) - Define b4 Measure
+	-To know what to Improve, Analyze what works poorly
+	-Control you processes (ensure measured quality levels) to avoid regression (losing improvements)
+		>Regression - it was fixed before, but it doesn't work (again) now
+Reliability/Safety
+	-fault == internal pbm, user can't see
+	-failure == user can see the pbm - no longer just a fault
+	-MTBF = MTTF + MTTR
+		>MTBF == Mean Time Between (two successive) Failures - mostly used
+		>MTTF == Mean Time To (next) Failure
+		>MTTR == Mean Time To Recovery (from a Failure happening) - When can the user use it?
+	-(System) Availability = MTTF / (MTTF + MTTR) [nox]
+	-Safety 
+		>failure modes
+		>user/external impacts
+Cyclomatic complexity - (Code quality measure)
+	o1.Basic Block (BB) of code == a sequence of instructions without any branching == a graph Node, N
+		>It might (& usually) end with a Branch Instruction (indicating 2+ graph edged out of the Node)
+			-Branch instruction indicates links to the "kid" nodes of the BB Mom node
+		>aka "Straight-Line code"
+	o2.Branch instruction has an edge, E, (usually 2+ edges) from its Node to another Node
+		>Includes: IF, Loop, Switch
+		>Excludes: Fcn calls, all non-executable stmts (like var declarations)
+	o3.Cyclomatic Complexity of Fcn, M == #E - #N + 2 [Ex: image on notes on BB]
+
+More SW Testing Strategies [Ch19]
+
+Testing Conventional Apps
+**You can't see bugs until you test
+
+>Black box T: can't see the code inside the box - painted black
+	-Test the API (contract with the outside world) & the "concepts/actions" the box represents
+>White/Glass box T: can see code working
+	-See image on BB | All stmts run | All paths run -- doable
+	-To check, put outputs at the start of each branch (including after a loop)
+		>All loop iterations, run to end
+		>All (Simple Test)conditions (w/ all their var values?) - else how do you know they all work?
+		EX: if((3 <= xx) && (xx < len) && (KRED == color))
+		       ==> 3 conds(either on or off each) ==> 2^3 = 8 test combos
+		>All var/slot values run -- never done
+		Useful chacks:
+		>Call Tree: log entry to every fcn at fcn body start - add a print stmt (w/ on a global test var)
+		>Entry-Exit Tree: log both entry and exit to each fcn (includes the Call/Entry tree)
+		>Entry-Exit State Tree: log state+args on entry and state+retval on exit
+>Black Box T: can't see the code inside the box - painted black
+	-All I/O ports run: argl + retval
+	-All Input vals run - usually too expensive - too many possible values for a parameter's range
+	-All EIO pairs -- for Rule #EIO
+>Range of Values T: ex: an int value, enum months, floats
+	o1.All "Boundary" values (both inside & outside - outside values are errors)
+	   EX: int xx = 0; //xx runs from 0 to len-1
+		>Boundaries aka "Corner Cases:"
+		>Boundaries: inside: {0,len-1} should work
+		>Bds: outside: {-1, len-1} for catching errors?
+	o2.Random sample of interior values(of the range)
+	   EX: xx in {5,31,66,82} ///eg: if Len = 100
+SCM: SW Config Mgmt (aka VCS, CMS)
+>VCS = Version Control System; CMS = Configuration Management System
+>During code development
+****Changing SW can damage it
+>Checkpoint your SW (aka "check-in", "push")
+	-If it is damaged, you can rollback (aka "check-out")to last good version
+>Track all mods, for rollback & for authorship
+	-Check-out fm X to create copy X' - this creates dependency from X' on "mom" version X
+	-Provides audit trail: who did what to whom - why a check-in "comment" is handy
+>Allow experimental branches & later merges (back into mainline) if experiment looks good
+	-Also, for diff code sets for diff platforms (eg, MSWin, Unix, Android, Iphone)
+>Terms: Mainline, Head, Repository, Branch, Merge
+>Docs/Reqts can also be put under "Configuration Control" (aka CM:Config Mgmt)
+	-Also general assets: video clips, audio clips, 3D visualizations,digital paintings, ...
+>SCCB = SW Change Ctrl Board
+	-(also used, combos of the two CCs: Config, Change, Ctrl)
+>Originally CM single files, not multi-file/folder projects
+>Now CM clusters/projects of files
+	-"Change set" = checkout/in a cluster of files - which of those files represented a changed file
+>(RT) CMS: (newer usage for "CMS")Manage your run-time configuration of features[nox]
+	-Esp. for cloud computing
+	
+Previous Lecture (10/27)
+
+SW Testing Strategies
+___________________________
+
+Exam is cumulative, includes notes from 8/27 to 10/27
+Approx 45% of exam is first 5 weeks
+
+-SOLID/D_2 Principles <-- including the second D   (10/1)
+ ^Single Responsibility is probably the most important*
+  ^Open/Closed = class hierarchy
+   ^Liskov Substitution = automatic upcasting* = object hierarchy
+    ^Interface Segregation = "giant subclass behind a middle man wrapper"
+     ^Dependency Inversion = client doesn't know guts of helpers
+      ^Dependency Injection = client is handed a reference to the helper
+-CRC cards <-- 1 set of CRC cards for each use case
+-No dates
+-Capers Jones = 10%,20%,70% <-- know successful,overrun,failed percentages (10/8)
+-Standish Group's Chaos Report <-- know average findings/Upshot
+-Best Chance of Success
+-First 5 Factors of Project Success
+-Gof Patterns (10/13)
+-Arch Styles (10/20)
+-know CRUD = Create, Read, Update, Delete
+-What are the tree types of NoSQL Databases? - key-Val, document, graph
+-CAP 'theorem'
+-no Network Arch
+-FURPS + Portability (10/22) - Functionalitiy,Usuability,Reliability,Performance,Supportability
+                    		^not a non-fcnl reqt
+-Review Techniques
+-no Agile "retrospctive"
+-SQA = SW Quality Assurance
+-No ITG under Testing Strategies
+-All kinds of Testing Strategies could be on test (10/22 && 10/27)
+-80-20 Rule (10/27)
+-6-sigma not on exam
+-DMAIC = Define,Measure,Analyze, Improve, Ctrl
+-SCM==VCS==CMS
+-SCCB <-- two middle C's can be any combination of Config,Change,Ctrl
+-"Silver Bullet" (10/15)
+-^Section 4 not on exam
+-Know difference btwn Essence and Accident
+-Conceptual Construct
 CECS 343 Acronyms 
+
 IoT = Internet of Things
 "SPL" = S/W Product Line
 ML = machine learning
@@ -1180,7 +2376,7 @@ QA = "Quality Assurance"
 COTS = "Commercial (or common) Off-The-Sheld" S/W
 RFP = "Request For Proposal"
 RFQ = "Request For Quotes"
-UML = Unified Modeling Language
+UML = Unifies Modeling Language
 II = Individuals & Interactions
 OMG = Object Management Group
 PT = Processes & Tools
@@ -1207,3 +2403,31 @@ CRC = Class, Responsibilities, Collaborators
 MFS = Minimum Feature Set
 COTS = Commercial(Common) Off-The-Shelf
 MD = method
+P = Principle
+SOLID/D = SRP, Open/Closed P, Liskov Substitution P, Interface Segregation P, Dependency Inversion, Dependency Injection
+VCS = Version Control System
+HLL = High-Level Language
+AP = "Automatic" Programming
+FTE = Full-time Employee
+BUFD = Bug Up-Front Design
+ACID = Atomicity, Consistency, Isolation, Durability
+CAP = Consistency, Availability, Partition tolerance
+RPC = Remote Procedure Call
+MVC = Model-View-Controller
+RTOS = Realtime O.S.
+P2P = Peer-to-Peer
+CORBA = Common Object Request Broker Architecture
+FURPS = Functionality, Usability, Reliability, Perfomance, Supportability
+NOX = Not on Exam
+SQA = SW Quality Assurance
+ITG = Independent Testing Group
+TDD = Test-Driven Dev
+DMAIC = Define, Measure, Analyze, - (then) Improve, Ctrl = DMA/IC
+MTBF = Mean Time Between (two successive) Failures
+MTTF = Mean Time To (next) Failure
+MTTR = Mean Time To Recovery (from a Failure happening)
+BB = Basic Block
+SCM = SW Configuration Management
+CMS = Configuration Management System
+SCCB = SW Change Ctrl Board OR SW Ctrl Change Board OR SW Config Ctrl Board OR SW Change Config Board OR etc
+
